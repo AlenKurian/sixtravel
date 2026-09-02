@@ -4,12 +4,64 @@ import { useState } from "react";
 import { useReveal } from "@/lib/useReveal";
 import { Arrow } from "./Icons";
 
-const WORTHS = [
-  "A city worth understanding.",
-  "A coastline worth disappearing into.",
-  "A culture worth encountering.",
-  "A hotel worth travelling for.",
-  "A landscape worth waking up to.",
+const WORTHS: { text: string; icon: JSX.Element }[] = [
+  {
+    text: "A city worth understanding.",
+    icon: (
+      <>
+        <path d="M6 21V7l6-3 6 3v14" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3 21h18M10 10h.01M14 10h.01M10 14h.01M14 14h.01M10 21v-4h4v4" strokeLinecap="round" />
+      </>
+    ),
+  },
+  {
+    text: "A coastline worth disappearing into.",
+    icon: (
+      <path
+        d="M3 9c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2M3 14c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2M3 19c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    text: "A culture worth encountering.",
+    icon: (
+      <>
+        <path d="M3 21h18M4 21V10M20 21V10M8 21V10M16 21V10M12 21V10M3 10 12 4l9 6" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ),
+  },
+  {
+    text: "A hotel worth travelling for.",
+    icon: (
+      <>
+        <path d="M12 3a4 4 0 0 1 4 4H8a4 4 0 0 1 4-4Z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 12h16a0 0 0 0 1 0 0 8 8 0 0 1-16 0ZM12 20v1M4 21h16" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ),
+  },
+  {
+    text: "A landscape worth waking up to.",
+    icon: (
+      <path
+        d="M3 20h18L14 8l-4 6-2-3-5 9Z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+];
+
+const IMAGES = [
+  // Italian coastline
+  "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1000&q=80",
+  // Dubai skyline
+  "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80",
+  // desert camp
+  "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=80",
+  // overwater villas
+  "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1000&q=80",
 ];
 
 const ENTERPRISE = [
@@ -110,23 +162,83 @@ export default function International() {
 
   return (
     <section ref={scope} id="international" className="section-pad bg-ivory">
-      <div className="grid grid-cols-1 items-center gap-8 border-b border-line pb-16 md:grid-cols-2 md:gap-16 md:pb-28">
+      <div className="grid grid-cols-1 items-center gap-12 border-b border-line pb-16 lg:grid-cols-[1fr_0.9fr] lg:gap-24 md:pb-28 xl:gap-32">
+        {/* Left — collage with floating card */}
+        <div className="relative w-full" data-reveal-group>
+          <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-[22px] border border-line">
+            {IMAGES.map((src) => (
+              <img
+                key={src}
+                src={src}
+                alt=""
+                loading="lazy"
+                className="aspect-square h-full w-full object-cover"
+              />
+            ))}
+          </div>
+
+          <div className="absolute left-1/2 top-1/2 w-[82%] max-w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-forest-soft/40 bg-forest p-7 text-ivory shadow-2xl md:p-9">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.3"
+              aria-hidden="true"
+              className="mx-auto mb-5 h-8 w-8 text-gold"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="m12 5 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" strokeLinejoin="round" />
+            </svg>
+            <p className="text-center font-display text-xl leading-[1.3] md:text-2xl">
+              Our world is curated, not catalogued.
+            </p>
+            <span className="mx-auto mt-5 block h-px w-full bg-gold/40" />
+            <ul className="mt-1 flex flex-col">
+              {WORTHS.map((w) => (
+                <li
+                  key={w.text}
+                  className="flex items-center gap-4 border-t border-ivory/10 py-3.5 first:border-t-0"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.3"
+                    aria-hidden="true"
+                    className="h-5 w-5 flex-none text-gold"
+                  >
+                    {w.icon}
+                  </svg>
+                  <span className="font-display text-[0.95rem] italic text-ivory/80 md:text-base">
+                    {w.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Right — copy */}
         <div className="flex flex-col items-start gap-5">
-          <p className="eyebrow" data-reveal="">
-            Global Reach
-          </p>
+          <div data-reveal="">
+            <p className="eyebrow">Global Reach</p>
+            <span className="mt-3 block h-px w-10 bg-gold" />
+          </div>
           <h2
-            className="font-display text-4xl md:text-5xl lg:text-[4.5rem]"
+            className="font-display text-4xl leading-[1.05] md:text-5xl lg:text-[4.5rem]"
             data-reveal="words"
           >
-            Beyond Kerala
+            Beyond
+            <br />
+            Kerala
           </h2>
-          <p
-            className="text-[0.74rem] uppercase tracking-[0.26em] text-gold"
-            data-reveal=""
-          >
-            The world, selected with discernment.
-          </p>
+          <div className="w-full max-w-[46ch]" data-reveal="">
+            <span className="block h-px w-full bg-gold/50" />
+            <p className="py-4 text-[0.74rem] uppercase tracking-[0.26em] text-gold">
+              The world, selected with discernment.
+            </p>
+            <span className="block h-px w-full bg-gold/50" />
+          </div>
           <p
             className="max-w-[50ch] text-[0.95rem] leading-[1.8] text-ink-soft md:text-base"
             data-reveal=""
@@ -140,23 +252,6 @@ export default function International() {
             <span>Explore International</span>
             <Arrow className="arrow" />
           </a>
-        </div>
-
-        <div
-          className="flex flex-col rounded-[22px] border border-line bg-ivory-deep p-6 md:p-10"
-          data-reveal-group
-        >
-          <p className="mb-4 font-display text-xl text-forest md:text-2xl">
-            Our world is curated, not catalogued.
-          </p>
-          {WORTHS.map((w) => (
-            <div
-              key={w}
-              className="border-t border-line py-4 font-display text-base italic text-ink-soft transition-[color,padding] duration-[400ms] ease-smooth hover:pl-3 hover:text-gold md:text-xl"
-            >
-              <span>{w}</span>
-            </div>
-          ))}
         </div>
       </div>
 
