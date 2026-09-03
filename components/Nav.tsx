@@ -60,12 +60,8 @@ export default function Nav() {
     <>
     <header
       ref={bar}
-      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-6 backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 sm:px-5 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
-        open ? "text-ivory md:text-forest" : "text-forest"
-      } ${
-        open
-          ? "bg-transparent pb-[0.7rem] pt-[1.6rem] shadow-none md:bg-ivory/[0.72]"
-          : solid
+      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
+        solid
           ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
           : "bg-ivory/[0.72] pb-[0.7rem] pt-[1.6rem]"
       }`}
@@ -130,7 +126,7 @@ export default function Nav() {
       <div className="absolute inset-0 bg-forest" />
 
       <div
-        className={`relative flex h-full flex-col px-7 pb-[calc(env(safe-area-inset-bottom)+2.75rem)] pt-[7.5rem] transition-all duration-[600ms] ease-smooth ${
+        className={`relative flex h-full flex-col px-7 pb-[calc(env(safe-area-inset-bottom)+5.5rem)] pt-[7.5rem] transition-all duration-[600ms] ease-smooth ${
           open
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-3 opacity-0"
