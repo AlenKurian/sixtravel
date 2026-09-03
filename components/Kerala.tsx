@@ -12,37 +12,37 @@ const FACETS = [
     t: "Backwaters",
     s: "Stillness, in motion.",
     b: "Private waterways, elegant houseboats, secluded waterfront retreats, and mornings that unfold at the pace of the water.",
-    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/backwaters.jpg",
   },
   {
     t: "Highlands",
     s: "Where the world slows down.",
     b: "Tea estates, spice plantations, mountain forests, mist-covered landscapes, and extraordinary highland retreats.",
-    img: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/highlands.jpg",
   },
   {
     t: "Coast",
     s: "The Arabian Sea, reimagined.",
     b: "Tropical shores, refined coastal properties, private escapes, and endless horizons.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/coast.jpg",
   },
   {
     t: "Heritage",
     s: "Where the past remains present.",
     b: "Architecture, craftsmanship, traditions, art, and stories carried through generations.",
-    img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/heritage.jpg",
   },
   {
     t: "Culinary",
     s: "The flavour of a place.",
     b: "Malabar traditions, coastal cuisine, local ingredients, heritage recipes, and exceptional dining experiences.",
-    img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/culinary.jpg",
   },
   {
     t: "Wellness",
     s: "The luxury of time.",
     b: "Ayurveda, nature, stillness, restorative hospitality, and the freedom to disconnect from the noise.",
-    img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/wellness.jpg",
   },
 ];
 
@@ -134,14 +134,11 @@ export default function Kerala() {
         ref={track}
         className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth scroll-pl-5 px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:scroll-pl-16 md:gap-8 md:px-16 lg:scroll-pl-24 lg:px-24"
       >
-        {FACETS.map((f, i) => (
+        {FACETS.map((f) => (
           <article
             key={f.t}
             className="js-kerala-card group relative flex flex-none basis-[85%] snap-start flex-col gap-[0.85rem] rounded-[22px] border border-ivory/[0.14] bg-ivory/5 p-6 sm:basis-[340px] md:p-8 lg:basis-[400px]"
           >
-            <span className="absolute right-6 top-5 font-display text-[0.9rem] tracking-[0.1em] text-gold">
-              0{i + 1}
-            </span>
             <div className="mb-2 aspect-[4/3] overflow-hidden rounded-[14px]">
               <img
                 src={f.img}

@@ -79,10 +79,10 @@ export default function Philosophy() {
           {FEATURES.map((f, i) => (
             <li
               key={f.label}
-              className={`js-phil-feature group relative flex flex-col justify-end overflow-hidden rounded-[20px] bg-forest text-ivory ${
+              className={`js-phil-feature group relative flex aspect-[16/11] flex-col justify-end overflow-hidden rounded-[20px] bg-forest text-ivory sm:aspect-auto ${
                 i === 2
                   ? "sm:col-start-2 sm:row-start-1 sm:row-span-2"
-                  : "aspect-[16/11] sm:aspect-auto"
+                  : ""
               }`}
             >
               <img

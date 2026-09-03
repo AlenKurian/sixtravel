@@ -51,7 +51,7 @@ export default function Hero() {
       className="flex min-h-[100svh] flex-col justify-center bg-ivory"
     >
       <div className="js-frame relative mx-3 mb-4 mt-[3.75rem] flex min-h-[96svh] items-end overflow-hidden rounded-[28px] [clip-path:inset(0_0_0_0_round_28px)] after:absolute after:inset-0 after:z-[1] after:bg-[linear-gradient(180deg,rgba(31,51,41,0.45)_0%,rgba(31,51,41,0.05)_32%,rgba(31,51,41,0.15)_60%,rgba(31,51,41,0.7)_100%)] after:content-[''] md:mx-6 md:mb-8 md:mt-[4.25rem]">
-        <div className="js-hero-img absolute inset-x-0 -inset-y-[12%] z-0">
+        <div className="js-hero-img absolute inset-x-0 -top-[16%] -bottom-[8%] z-0">
           <img
             src="/images/6_hero.png"
             alt="Sunlit sandstone cliffs rising over desert dunes"
@@ -60,25 +60,23 @@ export default function Hero() {
         </div>
         <div className="grain pointer-events-none absolute inset-0 z-[2] opacity-50 mix-blend-overlay" />
 
-        <div className="relative z-[3] grid w-full grid-cols-1 items-end gap-5 p-7 text-ivory md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 lg:p-16">
+        <div className="relative z-[3] grid w-full grid-cols-1 items-end gap-5 p-6 pb-[14vh] text-ivory sm:p-7 sm:pb-[18vh] md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] lg:p-16 lg:pb-[20vh]">
           <p className="eyebrow text-gold-light md:col-span-2">The Six Standard™</p>
 
-          <h1 className="js-headline font-display text-5xl font-medium leading-[1.04] sm:text-6xl md:text-7xl lg:text-8xl">
-            {["The World,", "Beautifully", "Within Reach."].map((l) => (
+          <h1 className="js-headline font-display text-[2.75rem] font-medium leading-[1.04] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+            {["The World", "Beautifully", "Within Reach"].map((l) => (
               <span key={l} className="js-line block overflow-hidden">
                 <span className="block">{l}</span>
               </span>
             ))}
           </h1>
 
-          <div className="js-copy flex max-w-[42ch] flex-col gap-6 pb-2">
+          <div className="js-copy flex flex-col items-center gap-6 pb-2 md:mb-[-8vh] md:mt-auto md:max-w-[52ch] md:justify-self-start md:pl-8 md:text-center lg:pl-12">
             <p className="text-[0.9rem] leading-[1.7] text-ivory/80 md:text-base">
-              Sixtravel is a premium travel company creating sophisticated
-              journeys across Kerala, India, and the world — remarkable places,
-              distinguished hospitality, seamless mobility, and experiences
-              selected with discernment.
+              Sophisticated journeys across Kerala, India, and the world —
+              thoughtfully curated, seamlessly delivered.
             </p>
-            <a href="#plan" className="btn btn-light self-start">
+            <a href="#plan" className="btn btn-light self-center">
               <span>Plan Your Journey</span>
               <Arrow className="arrow" />
             </a>

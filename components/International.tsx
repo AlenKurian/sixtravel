@@ -87,8 +87,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "Seamless. Smart. Successful.",
     sub: "Every journey, managed with precision and care.",
-    // executive at the airport
-    img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/executive.jpg",
     icon: (
       <path
         d="M4 15h16M6 15l1.5-5.5A2 2 0 0 1 9.4 8h5.2a2 2 0 0 1 1.9 1.5L18 15M7 19h2m6 0h2"
@@ -103,8 +102,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "Together, in motion.",
     sub: "One team, one itinerary, every detail aligned.",
-    // group travelling together
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/corporate_d.jpg",
     icon: (
       <>
         <circle cx="9" cy="8" r="2.4" />
@@ -122,8 +120,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "The room, and everything around it.",
     sub: "Logistics handled so the occasion can lead.",
-    // premium conference / event
-    img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/business.jpg",
     icon: (
       <>
         <rect x="4" y="5" width="16" height="11" rx="1.5" />
@@ -137,8 +134,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "Motivate. Reward. Inspire.",
     sub: "Destination experiences people remember for years.",
-    // luxury destination experience
-    img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/incentive.jpg",
     icon: (
       <path
         d="M12 4 9.5 9l-5.5.8 4 3.9-1 5.5 5-2.6 5 2.6-1-5.5 4-3.9L14.5 9 12 4Z"
@@ -152,8 +148,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "Strategy meets serenity.",
     sub: "Quiet settings that make room for clear thinking.",
-    // secluded retreat
-    img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/leadership.jpg",
     icon: (
       <>
         <path d="M4 19h16M6 19V9l6-4 6 4v10" strokeLinecap="round" strokeLinejoin="round" />
@@ -167,8 +162,7 @@ const ENTERPRISE = [
     href: "#plan",
     caption: "Global reach. Local support.",
     sub: "One partner across flights, stays, and ground logistics.",
-    // international airport / city
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/journeys/international.jpg",
     icon: (
       <>
         <circle cx="12" cy="12" r="8" />
@@ -199,7 +193,7 @@ export default function International() {
             ))}
           </div>
 
-          <div className="absolute left-1/2 top-1/2 w-[82%] max-w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-forest-soft/40 bg-forest p-7 text-ivory shadow-2xl md:p-9">
+          <div className="mt-4 w-full rounded-[22px] border border-forest-soft/40 bg-forest p-6 text-ivory shadow-2xl sm:absolute sm:left-1/2 sm:top-1/2 sm:mt-0 sm:w-[82%] sm:max-w-[24rem] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:p-7 md:p-9">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -380,8 +374,8 @@ export default function International() {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-tl from-forest/95 via-forest/35 to-transparent" />
 
                 {/* heading only, bottom-right, two lines */}
-                <div className="absolute bottom-7 right-7 max-w-[60%] text-right md:bottom-10 md:right-10">
-                  <p className="font-display text-2xl leading-[1.2] text-ivory md:text-[2rem]">
+                <div className="absolute bottom-5 right-5 max-w-[70%] text-right sm:bottom-7 sm:right-7 sm:max-w-[60%] md:bottom-10 md:right-10">
+                  <p className="font-display text-xl leading-[1.2] text-ivory sm:text-2xl md:text-[2rem]">
                     {ENTERPRISE[active].caption}
                   </p>
                 </div>
@@ -390,15 +384,15 @@ export default function International() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-10 flex items-center gap-5 border-t border-ivory/12 pt-6 md:mt-14">
+          <div className="mt-10 flex items-center gap-3 border-t border-ivory/12 pt-6 sm:gap-5 md:mt-14">
             <span className="font-display text-2xl text-gold md:text-3xl">
               {String(active + 1).padStart(2, "0")}
             </span>
-            <span className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/70 md:text-[0.72rem]">
+            <span className="text-[0.62rem] uppercase tracking-[0.2em] text-ivory/70 sm:tracking-[0.28em] md:text-[0.72rem]">
               {ENTERPRISE[active].caption}
             </span>
-            <span className="h-px flex-1 bg-gold/30" />
-            <Compass className="h-5 w-5 flex-none text-gold" />
+            <span className="hidden h-px flex-1 bg-gold/30 sm:block" />
+            <Compass className="ml-auto h-5 w-5 flex-none text-gold sm:ml-0" />
           </div>
         </div>
       </div>

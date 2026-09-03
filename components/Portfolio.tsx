@@ -8,19 +8,19 @@ const CARDS = [
     name: "Private Travel",
     body: "Travel created around you. Private escapes, family journeys, honeymoons, celebrations, wellness retreats, and bespoke itineraries designed with the freedom to move at your own pace.",
     href: "#plan",
-    img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/private.jpg",
   },
   {
     name: "Corporate Travel",
     body: "When business takes you across borders, precision matters. Sixtravel manages sophisticated journeys for executives, leadership teams, delegations, meetings, incentives, and retreats.",
     href: "#plan",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/corporate.jpg",
   },
   {
     name: "Six Select™",
     body: "A curated collection for founders, entrepreneurs, and ambitious travelers. Exceptional destinations meet meaningful experiences, cultural discovery, and genuine connection.",
     href: "#plan",
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/six.jpg",
   },
 ];
 

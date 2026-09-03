@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Arrow, Mark } from "./Icons";
+import { Arrow } from "./Icons";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -71,11 +71,10 @@ export default function Closing() {
         />
       </div>
 
-      <div className="relative z-[2] flex flex-col items-center gap-6 px-5 pb-16 pt-24 text-center md:px-16 md:pb-28 md:pt-48 lg:px-24">
-        <Mark className="h-11 w-11 text-gold" />
+      <div className="relative z-[2] flex flex-col items-center gap-6 px-5 pb-16 pt-16 text-center md:px-16 md:pb-28 md:pt-28 lg:px-24">
         <p className="eyebrow text-gold-light">Sixtravel</p>
 
-        <h2 className="js-closing-big max-w-[16ch] font-display text-5xl font-medium leading-[1.05] md:text-7xl lg:text-8xl">
+        <h2 className="js-closing-big max-w-[16ch] font-display text-[2.5rem] font-medium leading-[1.05] xs:text-5xl md:text-7xl lg:text-8xl">
           {words.map((w, i) => (
             <span key={i} className="word inline-block overflow-hidden">
               <span className="word-inner inline-block will-change-transform">{w}</span>
@@ -99,12 +98,12 @@ export default function Closing() {
         </div>
       </div>
 
-      <footer className="relative z-[2] flex flex-col gap-8 border-t border-ivory/[0.16] px-5 py-10 md:px-16 md:py-16 lg:px-24">
-        <div className="flex flex-wrap items-center justify-between gap-6">
+      <footer className="relative z-[2] flex flex-col gap-5 border-t border-ivory/[0.16] px-5 py-8 md:px-16 md:py-10 lg:px-24">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <span className="pl-[0.36em] font-display text-[1.1rem] tracking-[0.36em]">
             SIXTRAVEL
           </span>
-          <nav className="flex flex-wrap gap-6">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
             {NAVS.map((n) => (
               <a
                 href="#top"
@@ -116,7 +115,7 @@ export default function Closing() {
             ))}
           </nav>
         </div>
-        <div className="flex flex-wrap justify-between gap-4 text-[0.66rem] uppercase tracking-[0.14em] text-ivory/45">
+        <div className="flex flex-col gap-2 text-[0.66rem] uppercase tracking-[0.14em] text-ivory/45 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-4">
           <span>© {new Date().getFullYear()} Sixtravel. The Six Standard™.</span>
           <span>The world, beautifully within reach.</span>
         </div>

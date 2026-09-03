@@ -44,10 +44,10 @@ export default function Nav() {
   return (
     <header
       ref={bar}
-      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-6 border-b border-line px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
+      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
         solid
-          ? "bg-ivory/[0.92] py-2 shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
-          : "bg-ivory/[0.72] py-[0.7rem]"
+          ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
+          : "bg-ivory/[0.72] pb-[0.7rem] pt-[1.6rem]"
       }`}
     >
       <a
@@ -55,8 +55,8 @@ export default function Nav() {
         className="inline-flex items-center gap-[0.7rem] justify-self-start"
         aria-label="Sixtravel home"
       >
-        <Mark className="h-[1.6rem] w-[1.6rem]" />
-        <span className="pl-[0.36em] font-display text-[1.15rem] font-semibold tracking-[0.36em]">
+        <Mark className="h-[1.4rem] w-[1.4rem] sm:h-[1.6rem] sm:w-[1.6rem]" />
+        <span className="pl-[0.28em] font-display text-[1rem] font-semibold tracking-[0.28em] sm:pl-[0.36em] sm:text-[1.15rem] sm:tracking-[0.36em]">
           SIXTRAVEL
         </span>
       </a>
@@ -97,7 +97,7 @@ export default function Nav() {
       </button>
 
       <div
-        className={`fixed inset-0 z-[90] flex flex-col justify-center gap-6 bg-forest p-5 font-display text-[2rem] text-ivory transition-transform duration-[600ms] ease-smooth md:p-16 lg:p-24 ${
+        className={`fixed inset-0 z-[90] flex flex-col justify-center gap-5 overflow-y-auto bg-forest p-8 font-display text-[1.75rem] text-ivory transition-transform duration-[600ms] ease-smooth xs:text-[2rem] xs:gap-6 md:p-16 lg:p-24 ${
           open ? "visible translate-y-0" : "invisible -translate-y-full"
         }`}
       >
