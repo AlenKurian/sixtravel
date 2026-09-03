@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
         <div className="grain pointer-events-none absolute inset-0 z-[2] opacity-50 mix-blend-overlay" />
 
-        <div className="relative z-[3] grid w-full grid-cols-1 items-end gap-5 p-6 pb-[6vh] pt-[5vh] text-ivory sm:p-7 sm:pb-[18vh] md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
+        <div className="relative z-[3] grid w-full grid-cols-1 content-start items-start gap-5 p-6 pb-[6vh] pt-[6vh] text-ivory sm:p-7 sm:pb-[18vh] md:content-normal md:items-end md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
           <p className="eyebrow text-[0.58rem] text-gold-light md:col-span-2 md:text-[0.72rem]">The Six Standard™</p>
 
           <h1 className="js-headline font-display text-[2.75rem] font-medium leading-[1.04] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
@@ -74,7 +74,7 @@ export default function Hero() {
             ))}
           </h1>
 
-          <div className="js-copy mt-[16vh] flex flex-col items-center gap-6 pb-2 md:mt-auto md:mb-[-8vh] md:max-w-[52ch] md:justify-self-start md:pl-8 md:text-center lg:pl-12">
+          <div className="js-copy mt-[28vh] flex flex-col items-center gap-6 pb-2 md:mt-auto md:mb-[-8vh] md:max-w-[52ch] md:justify-self-start md:pl-8 md:text-center lg:pl-12">
             <p className="text-[0.8rem] leading-[1.6] text-ivory/80 md:text-base md:leading-[1.7]">
               Sophisticated journeys across Kerala, India, and the world —
               thoughtfully curated, seamlessly delivered.
