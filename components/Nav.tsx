@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Mark } from "./Icons";
+import { Mark, Arrow } from "./Icons";
 
 const LINKS = [
   { label: "Philosophy", href: "#philosophy" },
@@ -99,22 +99,29 @@ export default function Nav() {
     </header>
 
     <div
-      className={`fixed inset-0 z-[95] flex h-[100dvh] w-screen flex-col justify-center gap-4 overflow-y-auto bg-forest px-8 py-10 font-display text-[1.5rem] leading-none text-ivory transition-transform duration-[600ms] ease-smooth md:hidden ${
-        open ? "visible translate-y-0" : "invisible -translate-y-full"
+      className={`fixed inset-x-0 bottom-0 top-[3.9rem] z-[95] flex w-screen flex-col overflow-y-auto bg-forest text-ivory transition-transform duration-[500ms] ease-smooth md:hidden ${
+        open ? "visible translate-y-0" : "invisible -translate-y-[110%]"
       }`}
     >
-      {LINKS.map((l) => (
-        <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-          {l.label}
+      <nav className="flex flex-1 flex-col justify-center gap-7 px-8 font-display text-[2.2rem] font-medium leading-none">
+        {LINKS.map((l) => (
+          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            {l.label}
+          </a>
+        ))}
+      </nav>
+
+      <div className="px-8 pb-12 pt-8">
+        <span className="block h-px w-full bg-gold/40" />
+        <a
+          href="#plan"
+          onClick={() => setOpen(false)}
+          className="mt-8 inline-flex items-center gap-3 font-body text-[0.72rem] uppercase tracking-[0.24em] text-gold"
+        >
+          Plan Your Journey
+          <Arrow className="h-[0.95rem] w-[0.95rem]" />
         </a>
-      ))}
-      <a
-        href="#plan"
-        onClick={() => setOpen(false)}
-        className="mt-3 font-body text-[0.72rem] uppercase tracking-wide2 text-gold"
-      >
-        Plan Your Journey
-      </a>
+      </div>
     </div>
     </>
   );

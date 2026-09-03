@@ -180,7 +180,7 @@ export default function International() {
     <section ref={scope} id="international" className="section-pad bg-ivory">
       <div className="grid grid-cols-1 items-center gap-12 border-b border-line pb-16 lg:grid-cols-[1fr_0.9fr] lg:gap-24 md:pb-28 xl:gap-32">
         {/* Left — collage with floating card */}
-        <div className="relative w-full" data-reveal-group>
+        <div className="relative order-2 w-full lg:order-none" data-reveal-group>
           <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-[22px] border border-line">
             {IMAGES.map((src) => (
               <img
@@ -235,7 +235,7 @@ export default function International() {
         </div>
 
         {/* Right — copy */}
-        <div className="flex flex-col items-start gap-5">
+        <div className="order-1 flex flex-col items-start gap-5 lg:order-none">
           <div data-reveal="">
             <p className="eyebrow">Global Reach</p>
             <span className="mt-3 block h-px w-10 bg-gold" />
