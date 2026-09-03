@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useReveal } from "@/lib/useReveal";
+import { useMobileReveal } from "@/lib/useMobileReveal";
 import { Arrow } from "./Icons";
 
 function Compass({ className = "" }: { className?: string }) {
@@ -274,13 +275,14 @@ const PRINCIPLES: {
 
 export default function Standard() {
   const scope = useReveal<HTMLElement>();
+  const mob = useMobileReveal<HTMLDivElement>();
 
   return (
     <section ref={scope} id="standard" className="section-pad bg-ivory">
-      <div className="mb-16 grid grid-cols-1 gap-5 md:mb-28 md:grid-cols-2 md:gap-8">
+      <div className="mb-24 grid grid-cols-1 gap-10 md:mb-28 md:grid-cols-2 md:gap-8">
         {/* The Six Experience — dark card */}
         <div
-          className="flex overflow-hidden rounded-[22px] border border-forest-soft/40 bg-forest text-ivory"
+          className="-mx-6 flex overflow-hidden border-y border-forest-soft/40 bg-forest text-ivory md:mx-0 md:rounded-[22px] md:border"
           data-reveal=""
         >
           <div
@@ -293,19 +295,19 @@ export default function Standard() {
             <span className="absolute inset-0 bg-gradient-to-r from-transparent to-forest" />
           </div>
 
-          <div className="flex flex-1 flex-col gap-[1.1rem] p-6 sm:p-7 md:p-11">
+          <div className="flex flex-1 flex-col gap-5 p-6 py-10 sm:p-7 md:gap-[1.1rem] md:p-11">
             <div className="flex items-center gap-3">
               <Compass className="h-5 w-5 flex-none text-gold" />
-              <p className="text-[0.72rem] font-medium uppercase tracking-eyebrow text-gold">
+              <p className="text-[0.62rem] font-medium uppercase tracking-eyebrow text-gold md:text-[0.72rem]">
                 The Six Experience&trade;
               </p>
             </div>
             <span className="block h-px w-9 bg-gold/50" />
 
-            <h3 className="max-w-[16ch] font-display text-[1.7rem] leading-[1.1] text-ivory sm:text-[2rem] md:text-[2.6rem]">
+            <h3 className="max-w-[15ch] font-display text-[2rem] leading-[1.08] text-ivory sm:text-[2rem] md:max-w-[16ch] md:text-[2.6rem] md:leading-[1.1]">
               We don&rsquo;t simply arrange the journey. We compose it.
             </h3>
-            <p className="max-w-[42ch] text-[0.92rem] leading-[1.75] text-ivory/70">
+            <p className="max-w-[42ch] text-[0.92rem] leading-[1.8] text-ivory/70 md:leading-[1.75]">
               The finest travel experiences are rarely defined by a single hotel
               or destination. They are created through the relationship between
               every detail:
@@ -344,7 +346,7 @@ export default function Standard() {
 
         {/* The Art of Curation — light card */}
         <div
-          className="relative flex flex-col gap-[1.1rem] overflow-hidden rounded-[22px] border border-line bg-white p-6 sm:p-7 md:p-11"
+          className="relative -mx-6 flex flex-col gap-5 overflow-hidden border-y border-line bg-white p-6 py-10 sm:p-7 md:mx-0 md:gap-[1.1rem] md:rounded-[22px] md:border md:p-11"
           data-reveal=""
         >
           <div
@@ -408,14 +410,14 @@ export default function Standard() {
       </div>
 
       <div
-        className="relative mb-14 overflow-hidden rounded-[24px] border border-line bg-ivory px-5 py-10 sm:rounded-[32px] sm:px-6 sm:py-12 md:mb-24 md:px-12 md:py-16"
+        className="relative mb-20 overflow-hidden bg-ivory py-10 md:mb-24 md:rounded-[24px] md:border md:border-line md:px-12 md:py-16 sm:rounded-[32px] sm:px-6 sm:py-12"
         data-reveal=""
       >
-        <div className="relative z-[2] flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="flex flex-col gap-3">
+        <div className="relative z-[2] flex flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-3">
             <p className="eyebrow">Core Principles</p>
             <span className="block h-px w-12 bg-gold/60" />
-            <h2 className="flex items-end gap-3 font-display text-[2rem] leading-[1.05] text-forest sm:text-4xl md:text-[3.4rem]">
+            <h2 className="flex items-end gap-3 font-display text-[2.4rem] leading-[1.04] text-forest sm:text-4xl md:text-[3.4rem] md:leading-[1.05]">
               The Six Standard&trade;
               <svg
                 viewBox="0 0 24 24"
@@ -437,13 +439,14 @@ export default function Standard() {
             </p>
           </div>
 
-          <p className="max-w-[22ch] font-display text-[1.05rem] italic leading-[1.7] text-ink-soft md:pt-2 md:text-right">
+          <p className="max-w-[24ch] font-display text-[1.15rem] italic leading-[1.6] text-ink-soft md:max-w-[22ch] md:pt-2 md:text-[1.05rem] md:leading-[1.7] md:text-right">
             Our promise of excellence, in every journey we curate.
           </p>
         </div>
 
+        {/* Desktop (md+): the principle card grid. */}
         <div
-          className="relative z-[2] mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
+          className="relative z-[2] mt-12 hidden gap-4 md:grid md:grid-cols-3 xl:grid-cols-6"
           data-reveal-group
         >
           {PRINCIPLES.map((p) => (
@@ -486,74 +489,108 @@ export default function Standard() {
           ))}
         </div>
 
-        <div className="relative z-[2] mt-10 flex flex-col items-center gap-4 rounded-[16px] bg-forest px-5 py-5 text-center text-ivory sm:flex-row sm:gap-6 sm:px-6 sm:text-left">
+        {/* Mobile: editorial principle sequence — full-bleed plates, hairline-separated. */}
+        <div ref={mob} className="relative z-[2] mt-12 flex flex-col md:hidden">
+          {PRINCIPLES.map((p, i) => (
+            <article key={p.title} className="mt-14 first:mt-0">
+              <div
+                data-m-reveal
+                className="m-img-reveal relative aspect-[16/10] w-full overflow-hidden"
+              >
+                <img src={p.image} alt="" className="h-full w-full object-cover" />
+                <span className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-baseline gap-3 px-5 pb-5 text-ivory">
+                  <span className="font-display text-[0.85rem] text-gold-light/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h4 className="font-display text-[1.9rem] leading-none">{p.title}</h4>
+                </div>
+              </div>
+              <p
+                data-m-reveal
+                data-m-reveal-delay="110"
+                className="m-reveal mt-5 max-w-[38ch] text-[0.92rem] leading-[1.8] text-ink-soft"
+              >
+                {p.body}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="relative z-[2] -mx-6 mt-16 flex flex-col items-start gap-4 bg-forest px-6 py-8 text-left text-ivory md:mx-0 md:mt-10 md:flex-row md:items-center md:gap-6 md:rounded-[16px] md:px-6 md:py-5 sm:flex-row sm:gap-6 sm:text-left">
           <Compass className="h-6 w-6 flex-none text-gold" />
-          <span className="h-6 w-px flex-none bg-ivory/20" />
-          <p className="text-[0.72rem] uppercase tracking-[0.24em] text-gold">
+          <span className="hidden h-6 w-px flex-none bg-ivory/20 sm:block" />
+          <p className="text-[0.66rem] uppercase tracking-[0.28em] text-gold md:text-[0.72rem] md:tracking-[0.24em]">
             Six principles. One unwavering promise.
           </p>
           <span className="hidden h-px flex-1 bg-ivory/15 sm:block" />
-          <p className="text-[0.72rem] uppercase tracking-[0.28em] text-ivory/60">
+          <p className="text-[0.66rem] uppercase tracking-[0.3em] text-ivory/60 md:text-[0.72rem] md:tracking-[0.28em]">
             Sixtravel
           </p>
         </div>
       </div>
 
       <div
-        className="overflow-hidden rounded-[24px] border border-gold bg-ivory-deep"
+        className="-mx-6 overflow-hidden border-y border-gold bg-ivory-deep md:mx-0 md:rounded-[24px] md:border"
         data-reveal=""
       >
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,40%)_1fr]">
           {/* Left — image with badge */}
-          <div className="relative min-h-[320px] lg:min-h-full">
+          <div className="relative aspect-[16/11] min-h-[320px] md:aspect-auto lg:min-h-full">
             <img
               src="/images/six.jpg"
               alt=""
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <span className="absolute inset-0 bg-gradient-to-r from-forest/10 to-ivory-deep/30" />
+            <span className="absolute inset-0 bg-gradient-to-t from-ivory-deep/40 to-forest/10 md:bg-gradient-to-r md:from-forest/10 md:to-ivory-deep/30" />
           </div>
 
           {/* Right — content */}
-          <div className="flex flex-col gap-6 p-6 sm:p-9 md:p-14 lg:p-16">
-            <div className="flex flex-col gap-5">
-              <p className="eyebrow text-center">Selective by Design</p>
-              <h3 className="text-center font-display text-3xl leading-[1.15] text-forest md:text-[3rem]">
-                Exceptional travel
-                <br className="hidden sm:block" /> demands{" "}
+          <div className="flex flex-col gap-8 px-6 py-12 sm:p-9 md:gap-6 md:p-14 lg:p-16">
+            <div className="flex flex-col gap-5 md:items-center">
+              <p className="eyebrow md:text-center">Selective by Design</p>
+              <h3 className="font-display text-[2.4rem] leading-[1.1] text-forest md:text-center md:text-[3rem] md:leading-[1.15]">
+                Exceptional travel demands{" "}
                 <span className="italic text-gold">attention.</span>
               </h3>
-              <span className="mx-auto block h-px w-16 bg-gold/50" />
+              <span className="block h-px w-16 bg-gold/50 md:mx-auto" />
             </div>
 
-            <p className="mx-auto max-w-[60ch] text-center leading-[1.8] text-ink-soft">
+            <p className="max-w-[46ch] leading-[1.85] text-ink-soft md:mx-auto md:max-w-[60ch] md:text-center md:leading-[1.8]">
               Sixtravel is not built around volume. We believe truly considered
               travel requires time — to understand the traveler, study the
               destination, refine the details, and create something genuinely
               distinctive. So we remain selective.
             </p>
 
-            <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-2 flex flex-col md:grid md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:grid-cols-4">
               {SELECTIVE_FEATURES.map((f) => (
-                <li key={f.title} className="flex flex-col items-center gap-3 text-center">
-                  <span className="grid h-14 w-14 flex-none place-items-center rounded-full bg-gold/12 text-gold">
+                <li
+                  key={f.title}
+                  className="flex items-start gap-4 border-t border-line py-5 last:border-b md:flex-col md:items-center md:gap-3 md:border-0 md:py-0 md:text-center"
+                >
+                  <span className="grid h-11 w-11 flex-none place-items-center rounded-full bg-gold/12 text-gold md:h-14 md:w-14">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.3"
                       aria-hidden="true"
-                      className="h-6 w-6"
+                      className="h-5 w-5 md:h-6 md:w-6"
                     >
                       {f.icon}
                     </svg>
                   </span>
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-forest">
-                    {f.title}
-                  </span>
-                  <span className="h-px w-6 bg-gold/50" />
-                  <p className="text-[0.8rem] leading-[1.6] text-ink-soft">{f.body}</p>
+                  <div className="flex flex-1 flex-col gap-2 md:items-center">
+                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-forest md:tracking-[0.16em]">
+                      {f.title}
+                    </span>
+                    <span className="hidden h-px w-6 bg-gold/50 md:block" />
+                    <p className="text-[0.85rem] leading-[1.7] text-ink-soft md:text-[0.8rem] md:leading-[1.6]">
+                      {f.body}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>

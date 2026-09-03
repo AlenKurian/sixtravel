@@ -24,7 +24,22 @@ export default function Nav() {
       { yPercent: -100, opacity: 0 },
       { yPercent: 0, opacity: 1, duration: 1, delay: 0.6, ease: "power3.out" }
     );
+  }, []);
 
+  // Lock body scroll while the mobile overlay is open.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const { style } = document.body;
+    if (open) {
+      const prev = style.overflow;
+      style.overflow = "hidden";
+      return () => {
+        style.overflow = prev;
+      };
+    }
+  }, [open]);
+
+  useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       setSolid(y > 40);
@@ -45,8 +60,12 @@ export default function Nav() {
     <>
     <header
       ref={bar}
-      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
-        solid
+      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-6 backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 sm:px-5 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
+        open ? "text-ivory md:text-forest" : "text-forest"
+      } ${
+        open
+          ? "bg-transparent pb-[0.7rem] pt-[1.6rem] shadow-none md:bg-ivory/[0.72]"
+          : solid
           ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
           : "bg-ivory/[0.72] pb-[0.7rem] pt-[1.6rem]"
       }`}
@@ -80,47 +99,79 @@ export default function Nav() {
       </nav>
 
       <button
-        className="flex w-[30px] flex-col gap-[6px] justify-self-end border-0 bg-transparent md:hidden"
-        aria-label="Menu"
+        className="relative z-[110] flex h-11 w-11 flex-col items-end justify-center gap-[7px] justify-self-end border-0 bg-transparent md:hidden"
+        aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
         <span
-          className={`h-[1.5px] w-full bg-current transition-transform duration-[400ms] ease-smooth ${
-            open ? "translate-y-[3.75px] rotate-45" : ""
+          className={`block h-px bg-current transition-all duration-[450ms] ease-smooth ${
+            open ? "w-[22px] translate-y-[4px] rotate-45" : "w-[22px]"
           }`}
         />
         <span
-          className={`h-[1.5px] w-full bg-current transition-transform duration-[400ms] ease-smooth ${
-            open ? "-translate-y-[3.75px] -rotate-45" : ""
+          className={`block h-px bg-current transition-all duration-[450ms] ease-smooth ${
+            open ? "w-[22px] -translate-y-[4px] -rotate-45" : "w-[15px]"
           }`}
         />
       </button>
     </header>
 
+    {/* Mobile editorial overlay */}
     <div
-      className={`fixed inset-x-0 bottom-0 top-[3.9rem] z-[95] flex w-screen flex-col overflow-y-auto bg-forest text-ivory transition-transform duration-[500ms] ease-smooth md:hidden ${
-        open ? "visible translate-y-0" : "invisible -translate-y-[110%]"
+      className={`fixed inset-0 z-[95] flex flex-col text-ivory transition-[opacity,visibility] duration-[550ms] ease-smooth md:hidden ${
+        open
+          ? "visible opacity-100 pointer-events-auto"
+          : "invisible opacity-0 pointer-events-none"
       }`}
+      aria-hidden={!open}
     >
-      <nav className="flex flex-1 flex-col justify-center gap-7 px-8 font-display text-[2.2rem] font-medium leading-none">
-        {LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-            {l.label}
-          </a>
-        ))}
-      </nav>
+      {/* backdrop veil */}
+      <div className="absolute inset-0 bg-forest" />
 
-      <div className="px-8 pb-12 pt-8">
-        <span className="block h-px w-full bg-gold/40" />
-        <a
-          href="#plan"
-          onClick={() => setOpen(false)}
-          className="mt-8 inline-flex items-center gap-3 font-body text-[0.72rem] uppercase tracking-[0.24em] text-gold"
+      <div
+        className={`relative flex h-full flex-col px-7 pb-[calc(env(safe-area-inset-bottom)+2.75rem)] pt-[7.5rem] transition-all duration-[600ms] ease-smooth ${
+          open
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-3 opacity-0"
+        }`}
+      >
+        <nav className="flex flex-1 flex-col justify-center gap-9">
+          {LINKS.map((l, i) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block font-display text-[2.4rem] font-medium leading-[1.05] tracking-[0.01em] text-ivory transition-[transform,opacity,color] duration-[600ms] ease-smooth active:text-gold-light"
+              style={{
+                transitionDelay: open ? `${120 + i * 70}ms` : "0ms",
+                transform: open ? "translateY(0)" : "translateY(14px)",
+                opacity: open ? 1 : 0,
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <div
+          className="transition-[transform,opacity] duration-[600ms] ease-smooth"
+          style={{
+            transitionDelay: open ? `${120 + LINKS.length * 70 + 60}ms` : "0ms",
+            transform: open ? "translateY(0)" : "translateY(14px)",
+            opacity: open ? 1 : 0,
+          }}
         >
-          Plan Your Journey
-          <Arrow className="h-[0.95rem] w-[0.95rem]" />
-        </a>
+          <span className="block h-px w-full bg-ivory/15" />
+          <a
+            href="#plan"
+            onClick={() => setOpen(false)}
+            className="mt-7 inline-flex items-center gap-3 font-body text-[0.7rem] uppercase tracking-[0.28em] text-gold-light"
+          >
+            Plan Your Journey
+            <Arrow className="h-[0.9rem] w-[0.9rem]" />
+          </a>
+        </div>
       </div>
     </div>
     </>

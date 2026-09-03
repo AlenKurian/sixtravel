@@ -53,19 +53,19 @@ export default function Philosophy() {
       id="philosophy"
       className="section-pad overflow-hidden bg-ivory"
     >
-      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
+      <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-2 md:gap-16 lg:gap-20">
         <div className="js-phil-panel flex flex-col items-start">
           <p className="eyebrow flex items-center gap-3">
             Philosophy — Travel, Redefined
             <span className="h-px w-10 bg-gold/60" />
           </p>
 
-          <h2 className="mt-6 max-w-[20ch] font-display text-3xl font-medium leading-[1.14] text-forest md:text-4xl">
+          <h2 className="mt-8 max-w-[16ch] font-display text-[2.35rem] font-medium leading-[1.16] text-forest md:mt-6 md:max-w-[20ch] md:text-4xl md:leading-[1.14]">
             The world has no shortage of places. It has a shortage of experiences
             worth remembering.
           </h2>
 
-          <p className="mt-6 max-w-[52ch] text-[0.95rem] leading-[1.8] text-ink-soft md:text-base">
+          <p className="mt-8 max-w-[42ch] text-[0.95rem] leading-[1.85] text-ink-soft md:mt-6 md:max-w-[52ch] md:text-base md:leading-[1.8]">
             Sixtravel takes a more considered approach to travel. We look beyond
             the obvious — searching for extraordinary properties, distinctive
             landscapes, exceptional dining, cultural depth, private experiences,
@@ -75,14 +75,13 @@ export default function Philosophy() {
           </p>
         </div>
 
-        <ul className="js-phil-features grid grid-cols-1 gap-3 sm:h-[20rem] sm:grid-cols-2 sm:grid-rows-2 md:h-[22rem] md:gap-4">
+        {/* Mobile: full-bleed editorial stack. Desktop (md+): original mosaic. */}
+        <ul className="js-phil-features -mx-6 flex flex-col md:mx-0 md:grid md:h-[22rem] md:grid-cols-2 md:grid-rows-2 md:gap-4">
           {FEATURES.map((f, i) => (
             <li
               key={f.label}
-              className={`js-phil-feature group relative flex aspect-[16/11] flex-col justify-end overflow-hidden rounded-[20px] bg-forest text-ivory sm:aspect-auto ${
-                i === 2
-                  ? "sm:col-start-2 sm:row-start-1 sm:row-span-2"
-                  : ""
+              className={`js-phil-feature group relative flex aspect-[4/5] flex-col justify-end overflow-hidden bg-forest text-ivory md:aspect-auto md:rounded-[20px] ${
+                i === 2 ? "md:col-start-2 md:row-start-1 md:row-span-2" : ""
               }`}
             >
               <img
@@ -92,7 +91,7 @@ export default function Philosophy() {
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1100ms] ease-smooth group-hover:scale-[1.06]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/35 to-forest/5" />
-              <p className="relative m-4 font-display text-[0.95rem] leading-[1.3] md:text-base">
+              <p className="relative m-6 max-w-[16ch] font-display text-[1.35rem] leading-[1.2] md:m-4 md:max-w-none md:text-base md:leading-[1.3]">
                 {f.label}
               </p>
             </li>

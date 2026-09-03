@@ -71,10 +71,10 @@ export default function Closing() {
         />
       </div>
 
-      <div className="relative z-[2] flex flex-col items-center gap-6 px-5 pb-16 pt-16 text-center md:px-16 md:pb-28 md:pt-28 lg:px-24">
+      <div className="relative z-[2] flex flex-col items-center gap-8 px-6 pb-28 pt-28 text-center md:gap-6 md:px-16 md:pb-28 md:pt-28 lg:px-24">
         <p className="eyebrow text-gold-light">Sixtravel</p>
 
-        <h2 className="js-closing-big max-w-[16ch] font-display text-[2.5rem] font-medium leading-[1.05] xs:text-5xl md:text-7xl lg:text-8xl">
+        <h2 className="js-closing-big max-w-[12ch] font-display text-[2.9rem] font-medium leading-[1.04] xs:text-[3.2rem] md:max-w-[16ch] md:text-7xl md:leading-[1.05] lg:text-8xl">
           {words.map((w, i) => (
             <span key={i} className="word inline-block overflow-hidden">
               <span className="word-inner inline-block will-change-transform">{w}</span>
@@ -83,23 +83,30 @@ export default function Closing() {
           ))}
         </h2>
 
-        <div className="js-closing-sub mt-4 flex flex-col items-center gap-5">
-          <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ivory/70">
+        <div className="js-closing-sub mt-2 flex flex-col items-center gap-7 md:mt-4 md:gap-5">
+          <p className="text-[0.62rem] uppercase tracking-[0.28em] text-ivory/70 md:text-[0.7rem] md:tracking-[0.22em]">
             Kerala to the World · One Travel House · An Endless Horizon
           </p>
-          <p className="max-w-[34ch] font-display text-lg italic text-gold-light md:text-2xl">
+          <p className="max-w-[26ch] font-display text-[1.35rem] italic leading-[1.4] text-gold-light md:max-w-[34ch] md:text-2xl md:leading-normal">
             Curated with intention. Experienced without compromise. Travel,
             elevated.
           </p>
-          <a href="#plan" className="btn btn-light">
+          <a
+            href="#plan"
+            className="group mt-2 inline-flex items-center gap-3 border-b border-ivory/40 pb-2 font-body text-[0.66rem] uppercase tracking-[0.3em] text-ivory transition-colors duration-500 ease-smooth active:border-gold-light active:text-gold-light md:hidden"
+          >
+            Plan Your Journey
+            <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-active:translate-x-0.5" />
+          </a>
+          <a href="#plan" className="btn btn-light hidden md:inline-flex">
             <span>Plan Your Journey</span>
             <Arrow className="arrow" />
           </a>
         </div>
       </div>
 
-      <footer className="relative z-[2] border-t border-ivory/[0.16] px-5 py-8 md:px-16 md:py-10 lg:px-24">
-        <div className="flex flex-col items-center gap-5 text-center md:flex-row md:items-start md:justify-between md:gap-8 md:text-left">
+      <footer className="relative z-[2] border-t border-ivory/[0.16] px-6 py-12 md:px-16 md:py-10 lg:px-24">
+        <div className="flex flex-col items-center gap-7 text-center md:flex-row md:items-start md:justify-between md:gap-8 md:text-left">
           <span className="pl-[0.36em] font-display text-[1.15rem] tracking-[0.36em]">
             SIXTRAVEL
           </span>

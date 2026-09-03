@@ -178,7 +178,78 @@ export default function International() {
 
   return (
     <section ref={scope} id="international" className="section-pad bg-ivory">
-      <div className="grid grid-cols-1 items-center gap-12 border-b border-line pb-16 lg:grid-cols-[1fr_0.9fr] lg:gap-24 md:pb-28 xl:gap-32">
+      {/* Mobile: expansive, cinematic — panoramic plate + editorial list. */}
+      <div className="-mx-6 mb-14 md:hidden">
+        <div className="relative aspect-[3/4] w-full overflow-hidden">
+          <img
+            src={IMAGES[0]}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ivory via-ivory/10 to-forest/25" />
+          <div className="absolute inset-x-0 bottom-0 px-6 pb-8">
+            <p className="text-[0.6rem] uppercase tracking-[0.34em] text-gold">
+              Global Reach
+            </p>
+            <h2 className="mt-4 font-display text-[3.6rem] leading-[0.98] text-forest">
+              Beyond
+              <br />
+              Kerala
+            </h2>
+          </div>
+        </div>
+
+        <div className="px-6 pt-9">
+          <div className="m-rule" />
+          <p className="py-4 text-[0.62rem] uppercase tracking-[0.3em] text-gold">
+            The world, selected with discernment.
+          </p>
+          <div className="m-rule" />
+          <p className="mt-8 max-w-[42ch] text-[0.95rem] leading-[1.85] text-ink-soft">
+            Our perspective extends far beyond home. Sixtravel curates journeys
+            across global cities, private islands, distinguished coastlines,
+            mountain retreats, cultural capitals, emerging destinations, and
+            international business hubs.
+          </p>
+
+          <p className="mt-12 font-display text-[1.6rem] italic leading-[1.3] text-forest">
+            Our world is curated, not catalogued.
+          </p>
+          <ul className="mt-6 flex flex-col">
+            {WORTHS.map((w) => (
+              <li
+                key={w.text}
+                className="flex items-center gap-4 border-t border-line py-4 last:border-b"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-none text-gold"
+                >
+                  {w.icon}
+                </svg>
+                <span className="font-display text-[1.05rem] italic text-ink-soft">
+                  {w.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#plan"
+            className="group mt-10 inline-flex items-center gap-3 border-b border-forest/40 pb-2 font-body text-[0.66rem] uppercase tracking-[0.3em] text-forest transition-colors duration-500 ease-smooth active:border-gold active:text-gold"
+          >
+            Explore International
+            <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-active:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+
+      <div className="hidden grid-cols-1 items-center gap-12 border-b border-line pb-16 md:grid lg:grid-cols-[1fr_0.9fr] lg:gap-24 md:pb-28 xl:gap-32">
         {/* Left — collage with floating card */}
         <div className="relative order-2 w-full lg:order-none" data-reveal-group>
           <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-[22px] border border-line">
@@ -271,18 +342,18 @@ export default function International() {
         </div>
       </div>
 
-      <div className="pt-16 md:pt-28">
-        <div className="-mx-5 overflow-hidden bg-forest px-5 py-12 text-ivory md:-mx-16 md:px-16 md:py-14 lg:-mx-24 lg:px-24 lg:py-16">
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+      <div className="pt-20 md:pt-28">
+        <div className="-mx-6 overflow-hidden bg-forest px-6 py-20 text-ivory md:-mx-16 md:px-16 md:py-14 lg:-mx-24 lg:px-24 lg:py-16">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             {/* Left — heading + list */}
             <div className="flex flex-col">
-              <div className="mb-8 flex flex-col gap-3 md:mb-10">
-                <p className="flex items-center gap-3 text-[0.72rem] font-medium uppercase tracking-eyebrow text-gold">
+              <div className="mb-10 flex flex-col gap-4 md:mb-10 md:gap-3">
+                <p className="flex items-center gap-3 text-[0.62rem] font-medium uppercase tracking-eyebrow text-gold md:text-[0.72rem]">
                   <span className="h-px w-7 bg-gold" />
                   Corporate Travel
                 </p>
                 <h2
-                  className="font-display text-4xl leading-[1.05] md:text-6xl"
+                  className="font-display text-[2.9rem] leading-[1.04] md:text-6xl md:leading-[1.05]"
                   data-reveal="words"
                 >
                   Corporate Journeys
@@ -298,7 +369,8 @@ export default function International() {
                         href={c.href}
                         onMouseEnter={() => setActive(i)}
                         onFocus={() => setActive(i)}
-                        className="group flex items-center gap-5 border-t border-ivory/12 py-4 transition-colors duration-[400ms] ease-smooth last:border-b md:py-5"
+                        onClick={() => setActive(i)}
+                        className="group flex items-center gap-5 border-t border-ivory/12 py-5 transition-colors duration-[400ms] ease-smooth last:border-b md:py-5"
                       >
                         <span
                           className={`grid h-11 w-11 flex-none place-items-center rounded-full border transition-colors duration-[400ms] ease-smooth ${
@@ -351,12 +423,12 @@ export default function International() {
             </div>
 
             {/* Right — cinematic panel */}
-            <div className="flex flex-col gap-5 lg:mt-20">
-              <div className="flex items-center justify-end gap-3 text-[0.68rem] uppercase tracking-[0.28em] text-gold">
+            <div className="mt-4 flex flex-col gap-5 md:mt-0 lg:mt-20">
+              <div className="flex items-center justify-end gap-3 text-[0.62rem] uppercase tracking-[0.3em] text-gold md:text-[0.68rem] md:tracking-[0.28em]">
                 <span>Take Business Beyond Borders.</span>
                 <Compass className="h-5 w-5" />
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[6px] border border-gold/25 bg-forest sm:aspect-[3/2] lg:aspect-[4/3]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] border border-gold/25 bg-forest sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-[4/3]">
                 {ENTERPRISE.map((c, i) => (
                   <img
                     key={c.name}

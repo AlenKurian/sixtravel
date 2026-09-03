@@ -33,26 +33,27 @@ export default function Portfolio() {
       id="portfolio"
       className="section-pad bg-ivory"
     >
-      <div className="mb-10 flex items-end justify-between gap-6 md:mb-14">
-        <div className="flex flex-col gap-3">
+      <div className="mb-12 flex items-end justify-between gap-6 md:mb-14">
+        <div className="flex flex-col gap-4 md:gap-3">
           <p className="eyebrow" data-reveal="">
             Our Portfolio
           </p>
-          <h2 className="font-display text-3xl leading-[1.1] md:text-5xl" data-reveal="words">
+          <h2 className="max-w-[10ch] font-display text-[2.6rem] leading-[1.06] md:max-w-none md:text-5xl md:leading-[1.1]" data-reveal="words">
             Three Ways to Travel
           </h2>
         </div>
       </div>
 
+      {/* Mobile: horizontal editorial reel. Desktop (md+): grid. */}
       <div
-        className="mx-auto grid max-w-[1180px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6"
+        className="m-hscroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-6 px-6 pb-2 md:mx-auto md:grid md:max-w-[1180px] md:snap-none md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
         data-reveal-group
       >
         {CARDS.map((c) => (
           <a
             key={c.name}
             href={c.href}
-            className="group relative flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-[26px] bg-forest text-ivory"
+            className="group relative flex aspect-[3/4] w-[78vw] max-w-[320px] flex-none snap-start flex-col justify-end overflow-hidden rounded-[20px] bg-forest text-ivory md:aspect-[3/4] md:w-auto md:max-w-none md:rounded-[26px]"
           >
             <img
               src={c.img}
@@ -62,13 +63,13 @@ export default function Portfolio() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/35 to-forest/5" />
 
-            <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-ivory/40 bg-forest/20 backdrop-blur-sm transition-colors duration-500 ease-smooth group-hover:bg-ivory group-hover:text-forest">
+            <span className="absolute right-5 top-5 hidden h-10 w-10 place-items-center rounded-full border border-ivory/40 bg-forest/20 backdrop-blur-sm transition-colors duration-500 ease-smooth group-hover:bg-ivory group-hover:text-forest md:grid">
               <Arrow className="h-4 w-4 transition-transform duration-500 ease-smooth group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
 
-            <div className="relative flex flex-col gap-2.5 p-6">
-              <h3 className="font-display text-2xl">{c.name}</h3>
-              <p className="max-w-[34ch] text-[0.88rem] leading-[1.65] text-ivory/75">
+            <div className="relative flex flex-col gap-3 p-6 md:gap-2.5">
+              <h3 className="font-display text-[1.75rem] leading-[1.1] md:text-2xl">{c.name}</h3>
+              <p className="max-w-[34ch] text-[0.88rem] leading-[1.7] text-ivory/75 md:leading-[1.65]">
                 {c.body}
               </p>
             </div>

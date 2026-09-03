@@ -122,3 +122,115 @@ html.lenis body {
     transform: none !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Mobile editorial refinements (<= 767px only).
+   Desktop layout is deliberately untouched.
+   ------------------------------------------------------------------ */
+@media (max-width: 767px) {
+  /* Consistent horizontal rhythm for the whole mobile page. */
+  :root {
+    --m-gutter: 1.5rem;
+  }
+
+  /* Calmer, more generous type on small screens. */
+  body {
+    font-size: 100%;
+  }
+
+  /* Guard against any accidental horizontal overflow. */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Editorial section padding — far more vertical breathing room. */
+  .section-pad {
+    padding-left: var(--m-gutter);
+    padding-right: var(--m-gutter);
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+
+  /* Give major section headings room to breathe. */
+  .section-head {
+    margin-bottom: 3.5rem;
+    gap: 1.1rem;
+  }
+  .section-head h2 {
+    font-size: 2.5rem;
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+  }
+  .section-head .sub {
+    font-size: 0.66rem;
+    letter-spacing: 0.3em;
+  }
+
+  .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+  }
+
+  /* Comfortable touch targets for every button-like control. */
+  .btn {
+    min-height: 48px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  /* Subtle, premium reveal used by the mobile editorial helpers. */
+  .m-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .m-reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Slow cinematic image bloom on first view. */
+  .m-img-reveal img,
+  .m-img-reveal picture img {
+    transform: scale(1.08);
+    transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: saturate(0.92);
+  }
+  .m-img-reveal.is-in img,
+  .m-img-reveal.is-in picture img {
+    transform: scale(1);
+    filter: saturate(1);
+  }
+
+  /* Hairline rule used between editorial principles. */
+  .m-rule {
+    height: 1px;
+    width: 100%;
+    background: rgba(31, 51, 41, 0.16);
+  }
+
+  /* Horizontal editorial scrollers — no visible scrollbar, snappy. */
+  .m-hscroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .m-hscroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .m-reveal,
+  .m-img-reveal img,
+  .m-img-reveal picture img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
