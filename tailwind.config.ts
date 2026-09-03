@@ -39,10 +39,6 @@ const config: Config = {
           "0%": { transform: "translateX(-100%)" },
           "60%, 100%": { transform: "translateX(100%)" },
         },
-        drift: {
-          "0%, 100%": { transform: "translateY(0)", opacity: "0.5" },
-          "50%": { transform: "translateY(6px)", opacity: "1" },
-        },
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
@@ -50,7 +46,6 @@ const config: Config = {
       },
       animation: {
         cue: "cue 2s cubic-bezier(0.16, 1, 0.3, 1) infinite",
-        drift: "drift 3.4s cubic-bezier(0.16, 1, 0.3, 1) infinite",
         marquee: "marquee 22s linear infinite",
       },
     },

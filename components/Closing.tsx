@@ -98,12 +98,12 @@ export default function Closing() {
         </div>
       </div>
 
-      <footer className="relative z-[2] flex flex-col gap-5 border-t border-ivory/[0.16] px-5 py-8 md:px-16 md:py-10 lg:px-24">
-        <div className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-          <span className="pl-[0.36em] font-display text-[1.1rem] tracking-[0.36em]">
+      <footer className="relative z-[2] border-t border-ivory/[0.16] px-5 py-12 md:px-16 md:py-14 lg:px-24">
+        <div className="flex flex-col items-center gap-9 text-center md:flex-row md:items-start md:justify-between md:gap-8 md:text-left">
+          <span className="pl-[0.36em] font-display text-[1.15rem] tracking-[0.36em]">
             SIXTRAVEL
           </span>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+          <nav className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-center md:justify-end md:gap-x-6 md:gap-y-2">
             {NAVS.map((n) => (
               <a
                 href="#top"
@@ -115,7 +115,8 @@ export default function Closing() {
             ))}
           </nav>
         </div>
-        <div className="flex flex-col gap-2 text-[0.66rem] uppercase tracking-[0.14em] text-ivory/45 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-4">
+
+        <div className="mt-10 flex flex-col items-center gap-2 border-t border-ivory/[0.1] pt-8 text-center text-[0.64rem] uppercase tracking-[0.16em] text-ivory/45 md:mt-12 md:flex-row md:justify-between md:gap-4 md:pt-8 md:text-left">
           <span>© {new Date().getFullYear()} Sixtravel. The Six Standard™.</span>
           <span>The world, beautifully within reach.</span>
         </div>
