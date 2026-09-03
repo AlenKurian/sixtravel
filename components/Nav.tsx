@@ -62,8 +62,8 @@ export default function Nav() {
       ref={bar}
       className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
         solid
-          ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
-          : "bg-ivory/[0.72] pb-[0.7rem] pt-[1.6rem]"
+          ? "bg-ivory/[0.92] pb-[0.55rem] pt-[0.7rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px] md:pb-2 md:pt-[1.15rem]"
+          : "bg-ivory/[0.72] pb-[0.6rem] pt-[0.85rem] md:pb-[0.7rem] md:pt-[1.6rem]"
       }`}
     >
       <a

@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
         <div className="grain pointer-events-none absolute inset-0 z-[2] opacity-50 mix-blend-overlay" />
 
-        <div className="relative z-[3] grid w-full grid-cols-1 content-start items-start gap-5 px-6 pb-[calc(env(safe-area-inset-bottom)+3.25rem)] pt-[14vh] text-ivory sm:p-7 sm:pb-[18vh] md:content-normal md:items-end md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
+        <div className="relative z-[3] grid w-full grid-cols-1 content-start items-start gap-5 px-6 pb-[calc(env(safe-area-inset-bottom)+6.5rem)] pt-[13vh] text-ivory sm:p-7 sm:pb-[18vh] md:content-normal md:items-end md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
           <p className="eyebrow text-[0.6rem] tracking-[0.32em] text-gold-light md:col-span-2 md:text-[0.72rem]">The Six Standard™</p>
 
           <h1 className="js-headline font-display text-[3.1rem] font-medium leading-[1.02] tracking-[0.005em] xs:text-[3.4rem] sm:text-6xl md:text-7xl md:leading-[1.04] md:tracking-normal lg:text-8xl">
@@ -78,7 +78,7 @@ export default function Hero() {
             ))}
           </h1>
 
-          <div className="js-copy mt-[38vh] flex flex-col items-start gap-7 pb-2 sm:mt-[30vh] md:mt-auto md:mb-[-8vh] md:max-w-[52ch] md:items-center md:justify-self-start md:pl-8 md:text-center lg:pl-12">
+          <div className="js-copy mt-[30vh] flex flex-col items-start gap-7 pb-2 sm:mt-[30vh] md:mt-auto md:mb-[-8vh] md:max-w-[52ch] md:items-center md:justify-self-start md:pl-8 md:text-center lg:pl-12">
             <p className="max-w-[32ch] text-[0.86rem] leading-[1.7] text-ivory/85 md:max-w-none md:text-base md:leading-[1.7]">
               Sophisticated journeys across Kerala, India, and the world —
               thoughtfully curated, seamlessly delivered.
