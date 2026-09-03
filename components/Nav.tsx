@@ -44,10 +44,10 @@ export default function Nav() {
   return (
     <header
       ref={bar}
-      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 text-forest backdrop-blur-[10px] transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 lg:px-24 ${
+      className={`fixed inset-x-0 top-0 z-[100] isolate grid grid-cols-[1fr_auto] items-center gap-4 px-5 transition-[background,color,padding,box-shadow] duration-500 ease-smooth sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:px-16 md:text-forest md:backdrop-blur-[10px] lg:px-24 ${
         solid
-          ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px]"
-          : "bg-ivory/[0.72] pb-[0.7rem] pt-[1.6rem]"
+          ? "bg-ivory/[0.92] pb-2 pt-[1.15rem] text-forest shadow-[0_12px_30px_-20px_rgba(31,51,41,0.4)] backdrop-blur-[16px] md:bg-ivory/[0.92]"
+          : "bg-transparent pb-[0.85rem] pt-[1.35rem] text-ivory md:bg-ivory/[0.72] md:pb-[0.7rem] md:pt-[1.6rem]"
       }`}
     >
       <a
@@ -79,19 +79,19 @@ export default function Nav() {
       </nav>
 
       <button
-        className="flex w-[30px] flex-col gap-[6px] justify-self-end border-0 bg-transparent md:hidden"
+        className="flex w-[26px] flex-col gap-[7px] justify-self-end border-0 bg-transparent md:hidden"
         aria-label="Menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
         <span
-          className={`h-[1.5px] w-full bg-current transition-transform duration-[400ms] ease-smooth ${
-            open ? "translate-y-[3.75px] rotate-45" : ""
+          className={`h-px w-full bg-current transition-transform duration-[400ms] ease-smooth ${
+            open ? "translate-y-[4px] rotate-45" : ""
           }`}
         />
         <span
-          className={`h-[1.5px] w-full bg-current transition-transform duration-[400ms] ease-smooth ${
-            open ? "-translate-y-[3.75px] -rotate-45" : ""
+          className={`h-px w-full bg-current transition-transform duration-[400ms] ease-smooth ${
+            open ? "-translate-y-[4px] -rotate-45" : ""
           }`}
         />
       </button>

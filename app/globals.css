@@ -17,6 +17,13 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  /* Mobile: gently soften the overall type scale so everything
+     rem-based reads a touch smaller and calmer on small screens. */
+  @media (max-width: 639px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
   img {
     @apply block max-w-full;
   }
@@ -72,6 +79,28 @@
   }
   .btn-light::after {
     @apply bg-gold;
+  }
+
+  /* Editorial CTA — a refined invitation rather than a promotional pill.
+     A hairline underline that draws in on interaction. */
+  .cta-line {
+    @apply relative inline-flex items-center gap-[0.65rem] pb-[0.35rem] text-[0.72rem] font-medium uppercase tracking-wide2 text-ivory transition-colors duration-500 ease-smooth;
+  }
+  .cta-line::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-100 bg-ivory/45 transition-[transform,background-color] duration-[600ms] ease-smooth;
+  }
+  .cta-line:hover {
+    @apply text-gold-light;
+  }
+  .cta-line:hover::after {
+    @apply origin-right scale-x-0 bg-gold-light;
+  }
+  .cta-line .arrow {
+    @apply h-[0.95rem] w-[0.95rem] transition-transform duration-500 ease-smooth;
+  }
+  .cta-line:hover .arrow {
+    @apply translate-x-[2px] -translate-y-[2px];
   }
 
   .section-pad {
