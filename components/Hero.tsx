@@ -50,8 +50,8 @@ export default function Hero() {
       id="top"
       className="flex min-h-[100svh] flex-col justify-center bg-ivory"
     >
-      <div className="js-frame relative mx-3 mb-4 mt-[5.5rem] flex min-h-[76svh] items-end overflow-hidden rounded-[28px] [clip-path:inset(0_0_0_0_round_28px)] after:absolute after:inset-0 after:z-[1] after:bg-[linear-gradient(180deg,rgba(31,51,41,0.45)_0%,rgba(31,51,41,0.05)_32%,rgba(31,51,41,0.15)_60%,rgba(31,51,41,0.7)_100%)] after:content-[''] md:mx-6 md:mb-8 md:mt-[4.25rem] md:min-h-[96svh]">
-        <div className="js-hero-img absolute inset-x-0 top-0 -bottom-[22%] z-0 md:-top-[16%] md:-bottom-[8%]">
+      <div className="js-frame relative mx-3 mb-4 mt-[4.25rem] flex min-h-[64svh] items-end overflow-hidden rounded-[28px] [clip-path:inset(0_0_0_0_round_28px)] after:absolute after:inset-0 after:z-[1] after:bg-[linear-gradient(180deg,rgba(31,51,41,0.45)_0%,rgba(31,51,41,0.05)_32%,rgba(31,51,41,0.15)_60%,rgba(31,51,41,0.7)_100%)] after:content-[''] md:mx-6 md:mb-8 md:min-h-[96svh]">
+        <div className="js-hero-img absolute inset-x-0 top-0 -bottom-[18%] z-0 md:-top-[16%] md:-bottom-[8%]">
           <picture>
             <source media="(max-width: 767px)" srcSet="/images/mob_hero.png" />
             <img
@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
         <div className="grain pointer-events-none absolute inset-0 z-[2] opacity-50 mix-blend-overlay" />
 
-        <div className="relative z-[3] grid w-full grid-cols-1 items-end gap-5 p-6 pb-[10vh] pt-[22vh] text-ivory sm:p-7 sm:pb-[18vh] md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
+        <div className="relative z-[3] grid w-full grid-cols-1 items-end gap-5 p-6 pb-[6vh] pt-[12vh] text-ivory sm:p-7 sm:pb-[18vh] md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-12 md:pb-[20vh] md:pt-12 lg:p-16 lg:pb-[20vh]">
           <p className="eyebrow text-gold-light md:col-span-2">The Six Standard™</p>
 
           <h1 className="js-headline font-display text-[2.75rem] font-medium leading-[1.04] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
@@ -79,7 +79,7 @@ export default function Hero() {
               Sophisticated journeys across Kerala, India, and the world —
               thoughtfully curated, seamlessly delivered.
             </p>
-            <a href="#plan" className="btn btn-light self-center">
+            <a href="#plan" className="btn btn-light self-center !px-6 !py-3 !text-[0.62rem] md:!px-8 md:!py-4 md:!text-[0.7rem]">
               <span>Plan Your Journey</span>
               <Arrow className="arrow" />
             </a>
