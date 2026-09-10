@@ -124,16 +124,16 @@ export default function Kerala() {
             Explore Kerala
           </a>
 
-          <dl className="mt-6 grid w-full grid-cols-1 gap-6 border-t border-ivory/15 pt-8 sm:grid-cols-3 sm:gap-4">
+          <dl className="mt-6 grid w-full grid-cols-3 gap-3 border-t border-ivory/15 pt-8 sm:gap-4">
             {STATS.map((s) => (
               <div
                 key={s.l}
-                className="flex flex-col gap-2 sm:border-l sm:border-ivory/15 sm:pl-4 sm:first:border-l-0 sm:first:pl-0"
+                className="flex flex-col gap-1.5 border-l border-ivory/15 pl-2.5 first:border-l-0 first:pl-0 sm:gap-2 sm:pl-4"
               >
-                <dt className="font-display text-[1.9rem] leading-none tracking-[0.04em]">
+                <dt className="font-display text-[1.15rem] leading-none tracking-[0.04em] sm:text-[1.9rem]">
                   {s.n}
                 </dt>
-                <dd className="max-w-[16ch] text-[0.62rem] uppercase leading-[1.5] tracking-[0.24em] text-ivory/55">
+                <dd className="max-w-[16ch] text-[0.5rem] uppercase leading-[1.5] tracking-[0.16em] text-ivory/55 sm:text-[0.62rem] sm:tracking-[0.24em]">
                   {s.l}
                 </dd>
               </div>

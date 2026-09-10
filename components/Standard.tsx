@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { useReveal } from "@/lib/useReveal";
 import { useMobileReveal } from "@/lib/useMobileReveal";
 import { Arrow } from "./Icons";
@@ -276,6 +276,15 @@ const PRINCIPLES: {
 export default function Standard() {
   const scope = useReveal<HTMLElement>();
   const mob = useMobileReveal<HTMLDivElement>();
+  const principleTrack = useRef<HTMLDivElement>(null);
+
+  const scrollPrinciples = (dir: number) => {
+    const el = principleTrack.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".js-principle-card");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.8;
+    el.scrollBy({ left: step * dir, behavior: "smooth" });
+  };
 
   return (
     <section ref={scope} id="standard" className="section-pad bg-ivory">
@@ -489,32 +498,81 @@ export default function Standard() {
           ))}
         </div>
 
-        {/* Mobile: editorial principle sequence — full-bleed plates, hairline-separated. */}
-        <div ref={mob} className="relative z-[2] mt-12 flex flex-col md:hidden">
-          {PRINCIPLES.map((p, i) => (
-            <article key={p.title} className="mt-14 first:mt-0">
-              <div
-                data-m-reveal
-                className="m-img-reveal relative aspect-[16/10] w-full overflow-hidden"
+        {/* Mobile: horizontal principle carousel with prev/next arrows. */}
+        <div ref={mob} className="relative z-[2] mt-10 md:hidden">
+          <div className="flex items-center justify-between gap-4">
+            <span className="h-px flex-1 bg-line" />
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => scrollPrinciples(-1)}
+                aria-label="Previous"
+                className="grid h-11 w-11 place-items-center rounded-full border border-line text-ink-soft transition-colors duration-500 ease-smooth hover:border-forest hover:bg-forest hover:text-ivory"
               >
-                <img src={p.image} alt="" className="h-full w-full object-cover" />
-                <span className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/25 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-baseline gap-3 px-5 pb-5 text-ivory">
-                  <span className="font-display text-[0.85rem] text-gold-light/70">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" className="h-4 w-4">
+                  <path d="m14 7-5 5 5 5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollPrinciples(1)}
+                aria-label="Next"
+                className="grid h-11 w-11 place-items-center rounded-full border border-forest bg-forest text-ivory transition-colors duration-500 ease-smooth hover:bg-forest-soft"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" className="h-4 w-4">
+                  <path d="m10 7 5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={principleTrack}
+            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {PRINCIPLES.map((p, i) => (
+              <article
+                key={p.title}
+                className="js-principle-card group relative flex aspect-[3/4] flex-none basis-[68%] snap-start flex-col justify-between overflow-hidden rounded-[18px] bg-forest p-5 text-ivory sm:basis-[260px]"
+              >
+                <img
+                  src={p.image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest via-forest/45 to-forest/10" />
+
+                <div className="relative flex items-center gap-3">
+                  <span className="grid h-11 w-11 flex-none place-items-center rounded-full border border-gold/60 bg-forest text-gold">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.3"
+                      aria-hidden="true"
+                      className="h-5 w-5"
+                    >
+                      {p.icon}
+                    </svg>
+                  </span>
+                  <span className="font-display text-[0.9rem] text-ivory/70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h4 className="font-display text-[1.9rem] leading-none">{p.title}</h4>
                 </div>
-              </div>
-              <p
-                data-m-reveal
-                data-m-reveal-delay="110"
-                className="m-reveal mt-5 max-w-[38ch] text-[0.92rem] leading-[1.8] text-ink-soft"
-              >
-                {p.body}
-              </p>
-            </article>
-          ))}
+
+                <div className="relative">
+                  <h4 className="font-display text-[1.5rem] leading-none text-ivory">
+                    {p.title}
+                  </h4>
+                  <span className="mt-3 block h-px w-8 bg-gold/70" />
+                  <p className="mt-3 max-w-[32ch] text-[0.8rem] leading-[1.55] text-ivory/70">
+                    {p.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="relative z-[2] -mx-6 mt-16 flex flex-col items-start gap-4 bg-forest px-6 py-8 text-left text-ivory md:mx-0 md:mt-10 md:flex-row md:items-center md:gap-6 md:rounded-[16px] md:px-6 md:py-5 sm:flex-row sm:gap-6 sm:text-left">
