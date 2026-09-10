@@ -24,6 +24,9 @@ const CARDS = [
   },
 ];
 
+/* outer cards sit high, the middle card drops down (editorial stagger) */
+const OFFSET = ["md:mt-0", "md:mt-24 lg:mt-32", "md:mt-10 lg:mt-14"];
+
 export default function Portfolio() {
   const scope = useReveal<HTMLElement>();
 
@@ -33,7 +36,7 @@ export default function Portfolio() {
       id="portfolio"
       className="section-pad bg-ivory"
     >
-      <div className="mb-12 flex items-end justify-between gap-6 md:mb-14">
+      <div className="mb-12 flex items-end justify-between gap-6 md:mb-16">
         <div className="flex flex-col gap-4 md:gap-3">
           <p className="eyebrow" data-reveal="">
             Our Portfolio
@@ -44,36 +47,46 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Mobile: horizontal editorial reel. Desktop (md+): grid. */}
+      {/* Mobile: horizontal editorial reel. Desktop (md+): staggered 3-up. */}
       <div
-        className="m-hscroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-6 px-6 pb-2 md:mx-auto md:grid md:max-w-[1180px] md:snap-none md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
+        className="m-hscroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-6 px-6 pb-2 md:mx-auto md:grid md:max-w-[1120px] md:snap-none md:grid-cols-3 md:items-start md:gap-7 md:overflow-visible md:px-0 md:pb-0 lg:gap-10"
         data-reveal-group
       >
-        {CARDS.map((c) => (
-          <a
+        {CARDS.map((c, i) => (
+          <article
             key={c.name}
-            href={c.href}
-            className="group relative flex aspect-[3/4] w-[78vw] max-w-[320px] flex-none snap-start flex-col justify-end overflow-hidden rounded-[20px] bg-forest text-ivory md:aspect-[3/4] md:w-auto md:max-w-none md:rounded-[26px]"
+            className={`group flex w-[78vw] max-w-[320px] flex-none snap-start flex-col md:w-auto md:max-w-none ${OFFSET[i]}`}
           >
-            <img
-              src={c.img}
-              alt=""
-              loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1100ms] ease-smooth group-hover:scale-[1.06]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/35 to-forest/5" />
+            <a
+              href={c.href}
+              className="relative flex aspect-[3/4] flex-col justify-start overflow-hidden rounded-[20px] bg-forest text-ivory md:rounded-[24px]"
+            >
+              <img
+                src={c.img}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1100ms] ease-smooth group-hover:scale-[1.06]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/10 to-forest/5" />
 
-            <span className="absolute right-5 top-5 hidden h-10 w-10 place-items-center rounded-full border border-ivory/40 bg-forest/20 backdrop-blur-sm transition-colors duration-500 ease-smooth group-hover:bg-ivory group-hover:text-forest md:grid">
-              <Arrow className="h-4 w-4 transition-transform duration-500 ease-smooth group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
+              <h3 className="relative p-6 text-center font-display text-[1.75rem] leading-[1.1] md:p-7 md:text-[1.7rem]">
+                {c.name}
+              </h3>
+            </a>
 
-            <div className="relative flex flex-col gap-3 p-6 md:gap-2.5">
-              <h3 className="font-display text-[1.75rem] leading-[1.1] md:text-2xl">{c.name}</h3>
-              <p className="max-w-[34ch] text-[0.88rem] leading-[1.7] text-ivory/75 md:leading-[1.65]">
+            <div className="flex flex-col items-start gap-4 px-2 pt-5 md:items-center md:px-4 md:pt-6 md:text-center">
+              <p className="max-w-[38ch] text-[0.88rem] leading-[1.7] text-ink-soft md:max-w-[40ch]">
                 {c.body}
               </p>
+              <a
+                href={c.href}
+                className="group/btn inline-flex items-center gap-2 rounded-full border border-line bg-white px-5 py-3 text-[0.68rem] font-medium uppercase tracking-wide2 text-forest transition-colors duration-500 ease-smooth hover:border-forest"
+              >
+                <span>Discover more</span>
+                <Arrow className="h-3.5 w-3.5 transition-transform duration-500 ease-smooth group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              </a>
             </div>
-          </a>
+          </article>
         ))}
       </div>
     </section>

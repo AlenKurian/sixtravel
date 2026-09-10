@@ -1,24 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { useReveal } from "@/lib/useReveal";
 import { Arrow } from "./Icons";
-
-function Compass({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.3"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="m12 4 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 const WORTHS: { text: string; icon: JSX.Element }[] = [
   {
@@ -78,6 +61,10 @@ const IMAGES = [
   "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=80",
   // overwater villas
   "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1000&q=80",
+  // mountain lake
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
+  // temple at dusk
+  "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1000&q=80",
 ];
 
 const ENTERPRISE = [
@@ -174,7 +161,6 @@ const ENTERPRISE = [
 
 export default function International() {
   const scope = useReveal<HTMLElement>();
-  const [active, setActive] = useState(0);
 
   return (
     <section ref={scope} id="international" className="section-pad bg-ivory">
@@ -249,223 +235,221 @@ export default function International() {
         </div>
       </div>
 
-      <div className="hidden grid-cols-1 items-center gap-12 border-b border-line pb-16 md:grid lg:grid-cols-[1fr_0.9fr] lg:gap-24 md:pb-28 xl:gap-32">
-        {/* Left — collage with floating card */}
-        <div className="relative order-2 w-full lg:order-none" data-reveal-group>
-          <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-[22px] border border-line">
-            {IMAGES.map((src) => (
-              <img
-                key={src}
-                src={src}
-                alt=""
-                loading="lazy"
-                className="aspect-square h-full w-full object-cover"
-              />
-            ))}
+      <div className="hidden border-b border-line pb-16 md:block md:pb-24">
+        {/* Hero row — two tall plates flanking the centred headline */}
+        <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(0,1.36fr)_minmax(0,0.82fr)] items-stretch gap-0">
+          {/* Left plate */}
+          <figure className="relative overflow-hidden" data-reveal="">
+            <img
+              src={IMAGES[0]}
+              alt=""
+              loading="lazy"
+              className="h-full min-h-[34rem] w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-forest/60 to-transparent" />
+            <figcaption className="absolute inset-x-0 top-0 p-6 lg:p-8">
+              <p className="text-[0.62rem] uppercase tracking-[0.3em] text-ivory/85">
+                {WORTHS[0].text.replace(/\.$/, "")}
+              </p>
+              <p className="mt-3 max-w-[14ch] font-display text-[1.35rem] leading-[1.2] text-ivory">
+                {WORTHS[1].text}
+              </p>
+            </figcaption>
+          </figure>
+
+          {/* Centre — headline */}
+          <div className="relative flex flex-col items-center px-6 py-10 text-center lg:px-10">
+            <p className="eyebrow" data-reveal="">
+              Global Reach
+            </p>
+            <span className="mt-4 block h-px w-14 bg-gold" data-reveal="" />
+
+            <h2
+              className="mt-8 font-display text-[3.6rem] leading-[0.92] text-forest lg:text-[5.5rem]"
+              data-reveal=""
+            >
+              Beyond
+              <br />
+              Kerala
+            </h2>
+
+            <p
+              className="mt-8 text-[0.72rem] uppercase tracking-[0.26em] text-gold"
+              data-reveal=""
+            >
+              The world, selected with discernment.
+            </p>
+            <p
+              className="mt-6 max-w-[46ch] text-[0.95rem] leading-[1.8] text-ink-soft md:text-base"
+              data-reveal=""
+            >
+              Our perspective extends far beyond home. Sixtravel curates journeys
+              across global cities, private islands, distinguished coastlines,
+              mountain retreats, cultural capitals, emerging destinations, and
+              international business hubs.
+            </p>
+            <a href="#plan" className="btn mt-8" data-reveal="">
+              <span>Explore International</span>
+              <Arrow className="arrow" />
+            </a>
           </div>
 
-          <div className="mt-4 w-full rounded-[22px] border border-forest-soft/40 bg-forest p-6 text-ivory shadow-2xl sm:absolute sm:left-1/2 sm:top-1/2 sm:mt-0 sm:w-[82%] sm:max-w-[24rem] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:p-7 md:p-9">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              aria-hidden="true"
-              className="mx-auto mb-5 h-8 w-8 text-gold"
+          {/* Right plate */}
+          <figure className="relative overflow-hidden" data-reveal="">
+            <img
+              src={IMAGES[2]}
+              alt=""
+              loading="lazy"
+              className="h-full min-h-[34rem] w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-forest/60 to-transparent" />
+            <figcaption className="absolute inset-x-0 top-0 p-6 text-right lg:p-8">
+              <p className="text-[0.62rem] uppercase tracking-[0.3em] text-ivory/85">
+                {WORTHS[4].text.replace(/\.$/, "")}
+              </p>
+              <p className="mt-3 ml-auto max-w-[14ch] font-display text-[1.35rem] leading-[1.2] text-ivory">
+                {WORTHS[3].text}
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+
+        {/* Thumbnail row */}
+        <div
+          className="mt-8 grid grid-cols-4 gap-6 border-t border-line pt-12 lg:gap-8"
+          data-reveal-group
+        >
+          {WORTHS.slice(0, 4).map((w, i) => (
+            <div
+              key={w.text}
+              className="mx-auto flex w-full max-w-[13rem] flex-col"
+              data-reveal=""
             >
-              <circle cx="12" cy="12" r="9" />
-              <path d="m12 5 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" strokeLinejoin="round" />
-            </svg>
-            <p className="text-center font-display text-xl leading-[1.3] md:text-2xl">
-              Our world is curated, not catalogued.
-            </p>
-            <span className="mx-auto mt-5 block h-px w-full bg-gold/40" />
-            <ul className="mt-1 flex flex-col">
-              {WORTHS.map((w) => (
-                <li
-                  key={w.text}
-                  className="flex items-center gap-4 border-t border-ivory/10 py-3.5 first:border-t-0"
-                >
+              <img
+                src={IMAGES[i]}
+                alt=""
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <div className="mt-4">
+                <div className="flex items-center gap-2 text-gold">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.3"
                     aria-hidden="true"
-                    className="h-5 w-5 flex-none text-gold"
+                    className="h-4 w-4 flex-none"
                   >
                     {w.icon}
                   </svg>
-                  <span className="font-display text-[0.95rem] italic text-ivory/80 md:text-base">
-                    {w.text}
+                  <span className="text-[0.62rem] uppercase tracking-[0.26em]">
+                    {w.text.replace(/^A /, "").replace(/ worth.*$/, "")}
                   </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                </div>
+                <p className="mt-3 font-display text-[1.05rem] italic leading-[1.3] text-forest lg:text-[1.2rem]">
+                  {w.text}
+                </p>
+                <span className="mt-3 inline-flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.26em] text-ink-soft">
+                  Explore
+                  <Arrow className="h-[0.7rem] w-[0.7rem]" />
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Right — copy */}
-        <div className="order-1 flex flex-col items-start gap-5 lg:order-none">
-          <div data-reveal="">
-            <p className="eyebrow">Global Reach</p>
-            <span className="mt-3 block h-px w-10 bg-gold" />
-          </div>
-          <h2
-            className="font-display text-4xl leading-[1.05] md:text-5xl lg:text-[4.5rem]"
-            data-reveal="words"
-          >
-            Beyond
-            <br />
-            Kerala
-          </h2>
-          <div className="w-full max-w-[46ch]" data-reveal="">
-            <span className="block h-px w-full bg-gold/50" />
-            <p className="py-4 text-[0.74rem] uppercase tracking-[0.26em] text-gold">
-              The world, selected with discernment.
-            </p>
-            <span className="block h-px w-full bg-gold/50" />
-          </div>
-          <p
-            className="max-w-[50ch] text-[0.95rem] leading-[1.8] text-ink-soft md:text-base"
-            data-reveal=""
-          >
-            Our perspective extends far beyond home. Sixtravel curates journeys
-            across global cities, private islands, distinguished coastlines,
-            mountain retreats, cultural capitals, emerging destinations, and
-            international business hubs.
+        {/* Footer rule */}
+        <div className="mt-10 flex items-center gap-6 border-t border-line pt-6">
+          <p className="text-[0.62rem] uppercase tracking-[0.3em] text-ink-soft">
+            {WORTHS[0].text.replace(/\.$/, "")}
           </p>
-          <a href="#plan" className="btn" data-reveal="">
-            <span>Explore International</span>
-            <Arrow className="arrow" />
-          </a>
+          <span className="h-px flex-1 bg-line" />
+          <p className="text-[0.62rem] uppercase tracking-[0.3em] text-gold">
+            {WORTHS[4].text.replace(/\.$/, "")}
+          </p>
         </div>
       </div>
 
       <div className="pt-20 md:pt-28">
-        <div className="-mx-6 overflow-hidden bg-forest px-6 py-20 text-ivory md:-mx-16 md:px-16 md:py-14 lg:-mx-24 lg:px-24 lg:py-16">
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
-            {/* Left — heading + list */}
-            <div className="flex flex-col">
-              <div className="mb-10 flex flex-col gap-4 md:mb-10 md:gap-3">
-                <p className="flex items-center gap-3 text-[0.62rem] font-medium uppercase tracking-eyebrow text-gold md:text-[0.72rem]">
-                  <span className="h-px w-7 bg-gold" />
-                  Corporate Travel
-                </p>
-                <h2
-                  className="font-display text-[2.9rem] leading-[1.04] md:text-6xl md:leading-[1.05]"
-                  data-reveal="words"
-                >
-                  Corporate Journeys
-                </h2>
+        {/* Centered header */}
+        <div className="mx-auto flex max-w-[52rem] flex-col items-center text-center">
+          <p className="eyebrow" data-reveal="">
+            ENTERPRISE SOLUTIONS
+          </p>
+          <span className="mt-4 block h-px w-14 bg-gold" data-reveal="" />
+          <h2
+            className="mt-8 font-display text-[2.9rem] leading-[1.04] text-forest md:text-6xl md:leading-[1.05]"
+            data-reveal="words"
+          >
+            Corporate Journeys
+          </h2>
+          <p
+            className="mt-6 max-w-[46ch] text-[0.95rem] leading-[1.8] text-ink-soft md:text-base"
+            data-reveal=""
+          >
+            TAKE BUSINESS BEYOND BORDERS.
+          </p>
+        </div>
+
+        {/* Card grid */}
+        <div
+          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:gap-6 lg:grid-cols-3"
+          data-reveal-group
+        >
+          {ENTERPRISE.map((c, i) => (
+            <a
+              key={c.name}
+              href={c.href}
+              data-reveal=""
+              className="group relative flex aspect-[3/2] flex-col justify-between overflow-hidden rounded-[6px] bg-forest p-6 text-ivory md:p-7"
+            >
+              <img
+                src={c.img}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-smooth group-hover:scale-[1.04]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-forest/95 via-forest/70 to-forest/30" />
+
+              {/* number */}
+              <div className="relative">
+                <span className="font-display text-lg text-ivory/85 md:text-xl">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="mt-2 block h-px w-7 bg-gold/70" />
               </div>
 
-              <ul className="flex flex-col" onMouseLeave={() => setActive(0)}>
-                {ENTERPRISE.map((c, i) => {
-                  const on = i === active;
-                  return (
-                    <li key={c.name}>
-                      <a
-                        href={c.href}
-                        onMouseEnter={() => setActive(i)}
-                        onFocus={() => setActive(i)}
-                        onClick={() => setActive(i)}
-                        className="group flex items-center gap-5 border-t border-ivory/12 py-5 transition-colors duration-[400ms] ease-smooth last:border-b md:py-5"
-                      >
-                        <span
-                          className={`grid h-11 w-11 flex-none place-items-center rounded-full border transition-colors duration-[400ms] ease-smooth ${
-                            on
-                              ? "border-gold bg-gold/10 text-gold"
-                              : "border-ivory/20 text-ivory/45 group-hover:border-gold/60 group-hover:text-gold/80"
-                          }`}
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            aria-hidden="true"
-                            className="h-5 w-5"
-                          >
-                            {c.icon}
-                          </svg>
-                        </span>
-
-                        <div className="flex flex-1 flex-col">
-                          <h3
-                            className={`font-display text-lg leading-[1.2] transition-colors duration-[400ms] ease-smooth md:text-xl ${
-                              on ? "text-ivory" : "text-ivory/70 group-hover:text-ivory/90"
-                            }`}
-                          >
-                            {c.name}
-                          </h3>
-                          <p
-                            className={`overflow-hidden text-[0.85rem] leading-[1.6] text-ivory/50 transition-[max-height,opacity,margin] duration-[500ms] ease-smooth ${
-                              on ? "mt-1 max-h-16 opacity-100" : "max-h-0 opacity-0"
-                            }`}
-                          >
-                            {c.body}
-                          </p>
-                        </div>
-
-                        <Arrow
-                          className={`h-4 w-4 flex-none transition-all duration-[400ms] ease-smooth ${
-                            on
-                              ? "translate-x-1 text-gold opacity-100"
-                              : "text-ivory/30 group-hover:translate-x-0.5 group-hover:text-gold/70"
-                          }`}
-                        />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            {/* Right — cinematic panel */}
-            <div className="mt-4 flex flex-col gap-5 md:mt-0 lg:mt-20">
-              <div className="flex items-center justify-end gap-3 text-[0.62rem] uppercase tracking-[0.3em] text-gold md:text-[0.68rem] md:tracking-[0.28em]">
-                <span>Take Business Beyond Borders.</span>
-                <Compass className="h-5 w-5" />
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] border border-gold/25 bg-forest sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-[4/3]">
-                {ENTERPRISE.map((c, i) => (
-                  <img
-                    key={c.name}
-                    src={c.img}
-                    alt=""
-                    loading="lazy"
-                    aria-hidden={i !== active}
-                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[900ms] ease-smooth ${
-                      i === active ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
-
-                {/* dark wash for the heading */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tl from-forest/95 via-forest/35 to-transparent" />
-
-                {/* heading only, bottom-right, two lines */}
-                <div className="absolute bottom-5 right-5 max-w-[70%] text-right sm:bottom-7 sm:right-7 sm:max-w-[60%] md:bottom-10 md:right-10">
-                  <p className="font-display text-xl leading-[1.2] text-ivory sm:text-2xl md:text-[2rem]">
-                    {ENTERPRISE[active].caption}
+              {/* name + body + arrow */}
+              <div className="relative mt-auto flex items-end justify-between gap-4">
+                <div>
+                  <h3 className="font-display text-2xl leading-[1.15] text-ivory md:text-[1.75rem]">
+                    {c.name}
+                  </h3>
+                  <p className="mt-3 line-clamp-2 max-w-[44ch] text-[0.85rem] leading-[1.6] text-ivory/70">
+                    {c.body}
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Bottom bar */}
-          <div className="mt-10 flex items-center gap-3 border-t border-ivory/12 pt-6 sm:gap-5 md:mt-14">
-            <span className="font-display text-2xl text-gold md:text-3xl">
-              {String(active + 1).padStart(2, "0")}
-            </span>
-            <span className="text-[0.62rem] uppercase tracking-[0.2em] text-ivory/70 sm:tracking-[0.28em] md:text-[0.72rem]">
-              {ENTERPRISE[active].caption}
-            </span>
-            <span className="hidden h-px flex-1 bg-gold/30 sm:block" />
-            <Compass className="ml-auto h-5 w-5 flex-none text-gold sm:ml-0" />
-          </div>
+                <span className="grid h-11 w-11 flex-none place-items-center rounded-full border border-gold/60 text-gold transition-colors duration-[400ms] ease-smooth group-hover:border-gold group-hover:bg-gold/10">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-[400ms] ease-smooth group-hover:translate-x-0.5"
+                  >
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
