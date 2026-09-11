@@ -12,16 +12,19 @@
     @apply box-border;
   }
   body {
-    @apply bg-ivory text-ink font-body font-light leading-relaxed;
+    @apply bg-night text-cream font-body font-light leading-relaxed;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  /* Mobile: gently soften the overall type scale so everything
-     rem-based reads a touch smaller and calmer on small screens. */
   @media (max-width: 639px) {
     html {
-      font-size: 93.75%;
+      font-size: 87.5%;
+    }
+  }
+  @media (max-width: 400px) {
+    html {
+      font-size: 82.5%;
     }
   }
   img {
@@ -32,27 +35,28 @@
     text-decoration: none;
   }
   ::selection {
-    @apply bg-forest text-ivory;
+    @apply bg-forest text-night;
   }
 }
 
 @layer components {
   .eyebrow {
-    @apply font-body text-[0.72rem] font-medium tracking-eyebrow uppercase text-gold;
+    @apply font-body text-[0.68rem] font-medium tracking-eyebrow uppercase text-mist-soft;
   }
 
+  /* Primary CTA — quiet luxury: hairline border, no fill, ink on hover */
   .btn {
-    @apply relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-forest bg-forest px-8 py-4 text-[0.7rem] font-medium uppercase tracking-wide2 text-ivory transition-colors duration-500 ease-smooth;
+    @apply relative inline-flex items-center gap-3 overflow-hidden rounded-none border border-cream/70 bg-transparent px-8 py-4 text-[0.68rem] font-medium uppercase tracking-wide2 text-cream transition-colors duration-500 ease-smooth;
   }
   .btn > span {
     @apply relative z-[2];
   }
   .btn::after {
     content: "";
-    @apply absolute inset-0 z-[1] translate-y-[101%] bg-gold transition-transform duration-[550ms] ease-smooth;
+    @apply absolute inset-0 z-[1] translate-y-[101%] bg-cream transition-transform duration-[550ms] ease-smooth;
   }
   .btn:hover {
-    @apply text-forest;
+    @apply text-night;
   }
   .btn:hover::after {
     @apply translate-y-0;
@@ -61,28 +65,30 @@
     @apply h-4 w-4;
   }
 
+  /* Ghost — outline, on dark grounds */
   .btn-ghost {
-    @apply bg-transparent text-forest;
+    @apply border-night/50 bg-transparent text-night shadow-none;
   }
   .btn-ghost:hover {
-    @apply text-ivory;
-  }
-  .btn-ghost::after {
-    @apply bg-forest;
-  }
-
-  .btn-light {
-    @apply border-ivory bg-ivory text-forest;
-  }
-  .btn-light:hover {
     @apply text-forest;
   }
+  .btn-ghost::after {
+    @apply bg-night;
+  }
+
+  /* Light variant — dark text on paper */
+  .btn-light {
+    @apply border-forest bg-forest text-night;
+  }
+  .btn-light:hover {
+    @apply text-night;
+  }
   .btn-light::after {
-    @apply bg-gold;
+    @apply bg-cream;
   }
 
   .section-pad {
-    @apply px-5 py-20 md:px-16 md:py-32 lg:px-24;
+    @apply px-5 py-24 md:px-16 md:py-36 lg:px-24;
   }
 
   .section-head {
@@ -92,7 +98,19 @@
     @apply text-4xl md:text-5xl lg:text-6xl;
   }
   .section-head .sub {
-    @apply font-body text-[0.72rem] uppercase tracking-[0.28em] text-gold;
+    @apply font-body text-[0.68rem] uppercase tracking-[0.28em] text-mist-soft;
+  }
+
+  .hair {
+    @apply bg-line;
+  }
+
+  /* Display headline — restrained italic serif, editorial quiet-luxury */
+  .headline-vintage {
+    @apply font-display italic;
+  }
+  .headline-vintage .accent {
+    @apply text-cream not-italic;
   }
 }
 
@@ -125,62 +143,58 @@ html.lenis body {
 
 /* ------------------------------------------------------------------
    Mobile editorial refinements (<= 767px only).
-   Desktop layout is deliberately untouched.
    ------------------------------------------------------------------ */
 @media (max-width: 767px) {
-  /* Consistent horizontal rhythm for the whole mobile page. */
   :root {
     --m-gutter: 1.5rem;
   }
 
-  /* Calmer, more generous type on small screens. */
   body {
     font-size: 100%;
   }
 
-  /* Guard against any accidental horizontal overflow. */
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
   }
 
-  /* Editorial section padding — far more vertical breathing room. */
   .section-pad {
     padding-left: var(--m-gutter);
     padding-right: var(--m-gutter);
-    padding-top: 6.5rem;
-    padding-bottom: 6.5rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
-  /* Give major section headings room to breathe. */
   .section-head {
     margin-bottom: 3.5rem;
     gap: 1.1rem;
   }
   .section-head h2 {
-    font-size: 2.5rem;
-    line-height: 1.08;
+    font-size: 2.1rem;
+    line-height: 1.1;
     letter-spacing: 0.005em;
   }
   .section-head .sub {
-    font-size: 0.66rem;
-    letter-spacing: 0.3em;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
   }
 
   .eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 0.32em;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
   }
 
-  /* Comfortable touch targets for every button-like control. */
+  h1, h2, h3 {
+    word-wrap: break-word;
+  }
+
   .btn {
     min-height: 48px;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
 
-  /* Subtle, premium reveal used by the mobile editorial helpers. */
   .m-reveal {
     opacity: 0;
     transform: translateY(22px);
@@ -193,7 +207,6 @@ html.lenis body {
     transform: none;
   }
 
-  /* Slow cinematic image bloom on first view. */
   .m-img-reveal img,
   .m-img-reveal picture img {
     transform: scale(1.08);
@@ -207,14 +220,12 @@ html.lenis body {
     filter: saturate(1);
   }
 
-  /* Hairline rule used between editorial principles. */
   .m-rule {
     height: 1px;
     width: 100%;
-    background: rgba(31, 51, 41, 0.16);
+    background: rgba(38, 32, 25, 0.14);
   }
 
-  /* Horizontal editorial scrollers — no visible scrollbar, snappy. */
   .m-hscroll {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
