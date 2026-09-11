@@ -51,7 +51,7 @@ export default function Hero() {
     <section
       ref={root}
       id="top"
-      className="relative flex min-h-[100svh] flex-col items-center justify-end overflow-hidden bg-night text-center"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden bg-night text-center md:justify-end"
     >
       {/* Full-bleed image */}
       <div className="js-hero-img absolute inset-x-0 -top-[8%] -bottom-[8%] z-0">
@@ -70,7 +70,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,9,0.44)_0%,rgba(10,10,9,0.08)_26%,rgba(10,10,9,0.2)_52%,rgba(10,10,9,0.65)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,10,9,0.58))]" />
 
-      <div className="relative z-[3] flex w-full flex-col items-center px-6 pb-[calc(env(safe-area-inset-bottom)+5rem)] pt-[13vh] sm:px-8 md:px-16 md:pb-32 lg:px-24">
+      <div className="relative z-[3] flex w-full flex-col items-center px-6 pb-0 pt-0 sm:px-8 md:px-16 md:pb-32 md:pt-[13vh] lg:px-24">
         <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.28em] text-[#faf9f6]/80 md:mb-9 md:text-[0.72rem] md:tracking-[0.32em]">
           The Six Standard™ · Travel, Perfected.
         </p>
@@ -115,7 +115,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="relative z-[3] hidden items-center justify-center gap-3 pb-8 font-body text-[0.62rem] uppercase tracking-[0.28em] text-[#faf9f6]/55 md:flex">
+      <div className="absolute inset-x-0 bottom-0 z-[3] flex items-center justify-center gap-3 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] font-body text-[0.6rem] uppercase tracking-[0.28em] text-[#faf9f6]/55 md:relative md:pb-8 md:text-[0.62rem]">
         <span>Scroll</span>
         <i className="relative block h-px w-[46px] overflow-hidden bg-[#faf9f6]/30 after:absolute after:inset-0 after:animate-cue after:bg-[#faf9f6] after:content-['']" />
       </div>
