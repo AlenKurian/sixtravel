@@ -46,7 +46,7 @@ export default function Portfolio() {
             <span className="h-px w-10 bg-gold/60" />
           </p>
           <h2
-            className="max-w-[18ch] headline-vintage text-[2rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl"
+            className="max-w-[18ch] headline-vintage text-[2.25rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl"
             data-reveal="words"
           >
             Tailored <span className="accent">Mobility</span> &amp; Escapes
@@ -54,7 +54,7 @@ export default function Portfolio() {
         </div>
         <a
           href="#plan"
-          className="group inline-flex items-center gap-3 border-b border-gold/40 pb-2 font-body text-[0.58rem] uppercase tracking-[0.24em] text-gold transition-colors duration-500 ease-smooth hover:border-gold-deep hover:text-gold-deep md:text-[0.64rem] md:tracking-[0.3em]"
+          className="group inline-flex items-center gap-3 border-b border-gold/40 pb-2 font-body text-[0.64rem] uppercase tracking-[0.26em] text-gold transition-colors duration-500 ease-smooth hover:border-gold-deep hover:text-gold-deep md:text-[0.64rem] md:tracking-[0.3em]"
         >
           Explore Our Collection
           <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-hover:translate-x-0.5" />
@@ -81,22 +81,22 @@ export default function Portfolio() {
             </div>
 
             <div className="flex flex-1 flex-col items-start gap-3 p-7">
-              <h3 className="font-display text-[1.25rem] italic leading-[1.15] text-cream md:text-[1.5rem]">
+              <h3 className="font-display text-[1.4rem] italic leading-[1.15] text-cream md:text-[1.5rem]">
                 {c.name}
               </h3>
-              <p className="text-[0.5rem] uppercase tracking-[0.18em] text-gold md:text-[0.56rem] md:tracking-[0.24em]">
+              <p className="text-[0.56rem] uppercase tracking-[0.2em] text-gold md:text-[0.56rem] md:tracking-[0.24em]">
                 {c.tag}
               </p>
               <span className="block h-px w-8 bg-gold/50" />
-              <p className="max-w-[42ch] text-[0.76rem] leading-[1.7] text-mist md:text-[0.83rem] md:leading-[1.75]">
+              <p className="max-w-[42ch] text-[0.82rem] leading-[1.75] text-mist md:text-[0.83rem] md:leading-[1.75]">
                 {c.body}
               </p>
-              <p className="mt-1 text-[0.52rem] uppercase tracking-[0.18em] text-cream-soft md:text-[0.58rem] md:tracking-[0.22em]">
+              <p className="mt-1 text-[0.58rem] uppercase tracking-[0.2em] text-cream-soft md:text-[0.58rem] md:tracking-[0.22em]">
                 {c.note}
               </p>
               <a
                 href="#plan"
-                className="group/btn mt-auto inline-flex items-center gap-2 pt-4 text-[0.56rem] uppercase tracking-[0.22em] text-cream transition-colors duration-500 ease-smooth hover:text-gold-deep md:text-[0.6rem] md:tracking-[0.26em]"
+                className="group/btn mt-auto inline-flex items-center gap-2 pt-4 text-[0.6rem] uppercase tracking-[0.24em] text-cream transition-colors duration-500 ease-smooth hover:text-gold-deep md:text-[0.6rem] md:tracking-[0.26em]"
               >
                 Learn More
                 <Arrow className="h-3.5 w-3.5 transition-transform duration-500 ease-smooth group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />

@@ -143,7 +143,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block font-display text-[1.9rem] italic leading-[1.1] tracking-[0.01em] text-cream transition-[transform,opacity,color] duration-[600ms] ease-smooth active:text-mist xs:text-[2.1rem]"
+                className="block font-display text-[2.1rem] italic leading-[1.08] tracking-[0.01em] text-cream transition-[transform,opacity,color] duration-[600ms] ease-smooth active:text-mist xs:text-[2.3rem]"
                 style={{
                   transitionDelay: open ? `${120 + i * 70}ms` : "0ms",
                   transform: open ? "translateY(0)" : "translateY(14px)",
@@ -167,7 +167,7 @@ export default function Nav() {
             <a
               href="#plan"
               onClick={() => setOpen(false)}
-              className="mt-7 inline-flex items-center gap-3 font-body text-[0.62rem] uppercase tracking-[0.22em] text-cream xs:text-[0.7rem] xs:tracking-[0.28em]"
+              className="mt-7 inline-flex items-center gap-3 font-body text-[0.68rem] uppercase tracking-[0.24em] text-cream xs:text-[0.7rem] xs:tracking-[0.28em]"
             >
               Plan Your Journey
               <Arrow className="h-[0.9rem] w-[0.9rem]" />

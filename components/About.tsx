@@ -9,11 +9,11 @@ export default function About() {
     <section ref={scope} id="about" className="border-t border-[#faf9f6]/10 bg-forest">
       <div className="section-pad">
         <div className="mx-auto flex max-w-[880px] flex-col items-center gap-8 text-center">
-          <p className="font-body text-[0.6rem] font-medium uppercase tracking-eyebrow text-gold md:text-[0.68rem]" data-reveal>
+          <p className="font-body text-[0.66rem] font-medium uppercase tracking-eyebrow text-gold md:text-[0.68rem]" data-reveal>
             Who We Are
           </p>
           <p
-            className="max-w-[74ch] text-[0.86rem] leading-[1.75] text-[#faf9f6] md:text-[1.15rem] md:leading-[1.8]"
+            className="max-w-[74ch] text-[0.95rem] leading-[1.8] text-[#faf9f6] md:text-[1.15rem] md:leading-[1.8]"
             data-reveal="words"
           >
             A premium travel house creating thoughtfully designed journeys
@@ -26,7 +26,7 @@ export default function About() {
           <span className="h-px w-10 bg-[#faf9f6]/20" data-reveal />
 
           <p
-            className="max-w-[70ch] text-[0.64rem] uppercase leading-[1.8] tracking-[0.1em] text-[#d9d5cb]/60 md:text-[0.8rem] md:tracking-[0.14em]"
+            className="max-w-[70ch] text-[0.72rem] uppercase leading-[1.85] tracking-[0.12em] text-[#d9d5cb]/60 md:text-[0.8rem] md:tracking-[0.14em]"
             data-reveal
           >
             From private escapes and family journeys to executive travel,

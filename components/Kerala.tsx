@@ -122,13 +122,13 @@ export default function Kerala() {
               Destinations
               <span className="h-px w-10 bg-gold/60" />
             </p>
-            <h2 className="max-w-[18ch] headline-vintage text-[2rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl">
+            <h2 className="max-w-[18ch] headline-vintage text-[2.25rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl">
               Curated <span className="accent">Landscapes</span> &amp; Horizons
             </h2>
           </div>
           <a
             href="#plan"
-            className="group inline-flex items-center gap-3 border-b border-gold/40 pb-2 font-body text-[0.58rem] uppercase tracking-[0.24em] text-gold transition-colors duration-500 ease-smooth hover:border-gold-deep hover:text-gold-deep md:text-[0.64rem] md:tracking-[0.3em]"
+            className="group inline-flex items-center gap-3 border-b border-gold/40 pb-2 font-body text-[0.64rem] uppercase tracking-[0.26em] text-gold transition-colors duration-500 ease-smooth hover:border-gold-deep hover:text-gold-deep md:text-[0.64rem] md:tracking-[0.3em]"
           >
             Explore Destinations
             <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-hover:translate-x-0.5" />
@@ -151,18 +151,18 @@ export default function Kerala() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/30 to-transparent" />
               </div>
               <div className="flex flex-1 flex-col items-start gap-3 p-7 md:p-8">
-                <h3 className="font-display text-[1.4rem] leading-[1.1] text-cream md:text-[1.7rem]">
+                <h3 className="font-display text-[1.55rem] leading-[1.1] text-cream md:text-[1.7rem]">
                   {l.t}
                 </h3>
-                <p className="text-[0.52rem] uppercase tracking-[0.2em] text-gold md:text-[0.58rem] md:tracking-[0.24em]">
+                <p className="text-[0.58rem] uppercase tracking-[0.22em] text-gold md:text-[0.58rem] md:tracking-[0.24em]">
                   {l.s}
                 </p>
-                <p className="mt-1 max-w-[42ch] text-[0.78rem] leading-[1.7] text-mist md:text-[0.86rem] md:leading-[1.8]">
+                <p className="mt-1 max-w-[42ch] text-[0.85rem] leading-[1.75] text-mist md:text-[0.86rem] md:leading-[1.8]">
                   {l.b}
                 </p>
                 <a
                   href="#plan"
-                  className="group/btn mt-auto inline-flex items-center gap-2 pt-4 text-[0.58rem] uppercase tracking-[0.22em] text-cream transition-colors duration-500 ease-smooth hover:text-gold-deep md:text-[0.62rem] md:tracking-[0.26em]"
+                  className="group/btn mt-auto inline-flex items-center gap-2 pt-4 text-[0.62rem] uppercase tracking-[0.24em] text-cream transition-colors duration-500 ease-smooth hover:text-gold-deep md:text-[0.62rem] md:tracking-[0.26em]"
                 >
                   {l.cta}
                   <Arrow className="h-3.5 w-3.5 transition-transform duration-500 ease-smooth group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
@@ -174,25 +174,36 @@ export default function Kerala() {
       </div>
 
       {/* ── Split hero: dark panel + full-bleed image ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="order-2 flex flex-col items-start gap-8 bg-forest px-6 py-14 text-[#faf9f6] sm:px-10 lg:order-none lg:px-16 lg:py-16 xl:px-24">
+      <div className="relative grid grid-cols-1 lg:grid-cols-2">
+        {/* Mobile-only background image behind the dark panel */}
+        <div className="absolute inset-0 z-0 lg:hidden">
+          <img
+            src="/images/kerala.png"
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover saturate-[0.9]"
+          />
+          <div className="absolute inset-0 bg-forest/80" />
+        </div>
+
+        <div className="relative z-[1] order-2 flex flex-col items-start gap-8 bg-transparent px-6 py-14 text-[#faf9f6] sm:px-10 lg:order-none lg:bg-forest lg:px-16 lg:py-16 xl:px-24">
           <div className="flex items-center gap-4">
-            <p className="text-[0.54rem] uppercase tracking-[0.24em] text-[#d9d5cb]/80 md:text-[0.62rem] md:tracking-[0.32em]">
+            <p className="text-[0.6rem] uppercase tracking-[0.22em] text-[#d9d5cb]/80 md:text-[0.62rem] md:tracking-[0.32em]">
               Our home. Our heritage. Our beginning.
             </p>
             <span className="block h-px w-10 bg-gold/50" />
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="font-display text-[2.4rem] italic leading-[1] tracking-[0.01em] text-[#faf9f6] sm:text-[3.6rem] lg:text-[4.2rem] xl:text-[4.75rem]">
+            <h2 className="font-display text-[2.6rem] italic leading-[1] tracking-[0.01em] text-[#faf9f6] sm:text-[3.6rem] lg:text-[4.2rem] xl:text-[4.75rem]">
               <span className="text-gold not-italic">K</span>erala
             </h2>
-            <p className="text-[0.54rem] uppercase tracking-[0.22em] text-gold md:text-[0.6rem] md:tracking-[0.28em]">
+            <p className="text-[0.6rem] uppercase tracking-[0.2em] text-gold md:text-[0.6rem] md:tracking-[0.28em]">
               Where SIX TRAVEL&trade; begins.
             </p>
           </div>
 
-          <p className="max-w-[44ch] text-[0.82rem] leading-[1.8] text-[#d9d5cb]/85 md:text-[0.95rem] md:leading-[1.9]">
+          <p className="max-w-[44ch] text-[0.9rem] leading-[1.85] text-[#d9d5cb]/85 md:text-[0.95rem] md:leading-[1.9]">
             A land of quiet backwaters, dramatic highlands, expansive coastlines,
             living heritage, extraordinary cuisine, and deeply rooted culture. We
             create journeys that reveal Kerala beyond conventional tourism — from
@@ -202,7 +213,7 @@ export default function Kerala() {
 
           <a
             href="#plan"
-            className="group mt-2 inline-flex items-center gap-5 text-[0.56rem] uppercase tracking-[0.24em] text-[#faf9f6] md:text-[0.62rem] md:tracking-[0.3em]"
+            className="group mt-2 inline-flex items-center gap-5 text-[0.62rem] uppercase tracking-[0.22em] text-[#faf9f6] md:text-[0.62rem] md:tracking-[0.3em]"
           >
             <span className="grid h-14 w-14 flex-none place-items-center rounded-full border border-gold/40 transition-colors duration-500 ease-smooth group-hover:bg-gold group-hover:text-forest">
               <Arrow className="h-4 w-4 transition-transform duration-500 ease-smooth group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -220,10 +231,10 @@ export default function Kerala() {
                 key={s.l}
                 className="flex flex-col gap-1.5 border-l border-[#faf9f6]/15 pl-2.5 first:border-l-0 first:pl-0 sm:gap-2 sm:pl-4"
               >
-                <dt className="font-display text-[1.05rem] italic leading-none tracking-[0.04em] text-gold sm:text-[1.9rem]">
+                <dt className="font-display text-[1.2rem] italic leading-none tracking-[0.04em] text-gold sm:text-[1.9rem]">
                   {s.n}
                 </dt>
-                <dd className="max-w-[16ch] text-[0.42rem] uppercase leading-[1.45] tracking-[0.12em] text-[#d9d5cb]/60 sm:text-[0.6rem] sm:tracking-[0.24em]">
+                <dd className="max-w-[16ch] text-[0.48rem] uppercase leading-[1.5] tracking-[0.13em] text-[#d9d5cb]/60 sm:text-[0.6rem] sm:tracking-[0.24em]">
                   {s.l}
                 </dd>
               </div>
@@ -231,7 +242,7 @@ export default function Kerala() {
           </dl>
         </div>
 
-        <div className="relative order-1 min-h-[62vw] w-full overflow-hidden lg:order-none lg:min-h-0 lg:self-stretch">
+        <div className="relative order-1 hidden w-full overflow-hidden lg:order-none lg:block lg:min-h-0 lg:self-stretch">
           <img
             src="/images/kerala.png"
             alt="A Kerala backwater houseboat framed by a window"
@@ -240,7 +251,7 @@ export default function Kerala() {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest/50 via-transparent to-forest/10" />
           <div className="absolute right-6 top-10 flex flex-col items-end text-right sm:right-10 lg:right-12 lg:top-16">
-            <p className="max-w-[16ch] font-display text-[1.05rem] italic leading-[1.3] text-[#faf9f6] [text-shadow:0_2px_18px_rgba(10,10,9,0.9)] sm:text-[1.4rem] lg:text-[1.65rem]">
+            <p className="max-w-[16ch] font-display text-[1.2rem] italic leading-[1.3] text-[#faf9f6] [text-shadow:0_2px_18px_rgba(10,10,9,0.9)] sm:text-[1.4rem] lg:text-[1.65rem]">
               More than a destination, a feeling.
             </p>
             <span className="mt-4 block h-px w-12 bg-[#faf9f6]/70" />
@@ -252,7 +263,7 @@ export default function Kerala() {
       <div className="border-t border-line bg-night-soft px-6 py-20 sm:px-10 lg:px-16 lg:py-28 xl:px-24">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <p className="text-[0.56rem] uppercase tracking-[0.22em] text-cream-soft sm:text-[0.62rem] sm:tracking-[0.32em]">
+            <p className="text-[0.62rem] uppercase tracking-[0.2em] text-cream-soft sm:text-[0.62rem] sm:tracking-[0.32em]">
               Experiences in Kerala
             </p>
             <span className="hidden h-px w-16 bg-line sm:block" />
@@ -301,17 +312,17 @@ export default function Kerala() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest via-forest/45 to-forest/10" />
 
               <div className="relative">
-                <span className="font-display text-[0.9rem] italic text-[#faf9f6]/85">
+                <span className="font-display text-[1rem] italic text-[#faf9f6]/85">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="mt-2 block h-px w-8 bg-gold/70" />
               </div>
 
               <div className="relative">
-                <h3 className="text-[0.78rem] uppercase tracking-[0.2em] text-[#faf9f6] md:text-[0.9rem] md:tracking-[0.24em]">
+                <h3 className="text-[0.84rem] uppercase tracking-[0.18em] text-[#faf9f6] md:text-[0.9rem] md:tracking-[0.24em]">
                   {f.t}
                 </h3>
-                <p className="mt-2.5 line-clamp-3 max-w-[24ch] text-[0.7rem] leading-[1.55] text-[#d9d5cb]/80 md:text-[0.8rem] md:leading-[1.6]">
+                <p className="mt-2.5 line-clamp-3 max-w-[24ch] text-[0.76rem] leading-[1.6] text-[#d9d5cb]/80 md:text-[0.8rem] md:leading-[1.6]">
                   {f.b}
                 </p>
               </div>
@@ -319,7 +330,7 @@ export default function Kerala() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-line pt-6 text-[0.54rem] uppercase tracking-[0.22em] text-mist sm:flex-row sm:items-center sm:justify-between sm:text-[0.6rem] sm:tracking-[0.28em]">
+        <div className="mt-16 flex flex-col gap-4 border-t border-line pt-6 text-[0.6rem] uppercase tracking-[0.2em] text-mist sm:flex-row sm:items-center sm:justify-between sm:text-[0.6rem] sm:tracking-[0.28em]">
           <span>Kerala stays with you</span>
           <span className="hidden h-px flex-1 bg-line sm:mx-8 sm:block" />
           <span>Long after you leave</span>
@@ -356,16 +367,16 @@ export default function Kerala() {
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night via-night/80 to-night/20" />
             <div className="relative flex flex-col gap-4">
-              <h3 className="font-display text-[1.7rem] italic leading-[1.08] text-cream md:text-[2.6rem]">
+              <h3 className="font-display text-[1.9rem] italic leading-[1.08] text-cream md:text-[2.6rem]">
                 {r.t}
               </h3>
-              <p className="text-[0.52rem] uppercase tracking-[0.22em] text-gold md:text-[0.6rem] md:tracking-[0.28em]">
+              <p className="text-[0.58rem] uppercase tracking-[0.2em] text-gold md:text-[0.6rem] md:tracking-[0.28em]">
                 {r.s}
               </p>
-              <p className="mt-2 max-w-[46ch] text-[0.78rem] leading-[1.75] text-mist md:text-[0.9rem] md:leading-[1.85]">
+              <p className="mt-2 max-w-[46ch] text-[0.85rem] leading-[1.8] text-mist md:text-[0.9rem] md:leading-[1.85]">
                 {r.b}
               </p>
-              <p className="mt-3 font-display text-[0.95rem] italic leading-[1.35] text-gold-deep md:text-[1.1rem] md:leading-[1.4]">
+              <p className="mt-3 font-display text-[1.05rem] italic leading-[1.35] text-gold-deep md:text-[1.1rem] md:leading-[1.4]">
                 {r.note}
               </p>
             </div>

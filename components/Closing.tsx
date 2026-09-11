@@ -85,7 +85,7 @@ export default function Closing() {
           SIX TRAVEL&trade;
         </p>
 
-        <h2 className="js-closing-big max-w-[14ch] font-display text-[2.1rem] italic leading-[1.08] text-[#faf9f6] xs:text-[2.4rem] sm:text-[2.9rem] md:max-w-[18ch] md:text-7xl md:leading-[1.03] lg:text-[5rem]">
+        <h2 className="js-closing-big max-w-[14ch] font-display text-[2.35rem] italic leading-[1.1] text-[#faf9f6] xs:text-[2.55rem] sm:text-[2.9rem] md:max-w-[18ch] md:text-7xl md:leading-[1.03] lg:text-[5rem]">
           {words.map((w, i) => (
             <span key={i}>
               <span className="word inline-block overflow-hidden align-bottom">
@@ -99,17 +99,17 @@ export default function Closing() {
         </h2>
 
         <div className="js-closing-sub mt-2 flex flex-col items-center gap-7 md:mt-4 md:gap-6">
-          <p className="max-w-[48ch] text-[0.74rem] leading-[1.75] text-gold md:max-w-[56ch] md:text-[1.5rem] md:leading-[1.85]">
+          <p className="max-w-[48ch] text-[0.82rem] leading-[1.8] text-gold md:max-w-[56ch] md:text-[1.5rem] md:leading-[1.85]">
             Tell us where you want to go. Tell us how you want to travel. Tell us
             what you want to experience. We&rsquo;ll take it from there.
           </p>
-          <p className="max-w-[28ch] font-display text-[1.1rem] italic leading-[1.4] text-[#faf9f6] md:max-w-[40ch] md:text-3xl md:leading-normal">
+          <p className="max-w-[28ch] font-display text-[1.25rem] italic leading-[1.4] text-[#faf9f6] md:max-w-[40ch] md:text-3xl md:leading-normal">
             Go somewhere worth remembering.
           </p>
 
           <a
             href="#plan"
-            className="group mt-2 inline-flex items-center gap-3 rounded-full bg-[#faf9f6] px-6 py-[0.75rem] font-body text-[0.6rem] font-medium text-forest transition-colors duration-500 ease-smooth active:bg-[#e9e6dd] md:hidden"
+            className="group mt-2 inline-flex items-center gap-3 rounded-full bg-[#faf9f6] px-6 py-[0.75rem] font-body text-[0.68rem] font-medium text-forest transition-colors duration-500 ease-smooth active:bg-[#e9e6dd] md:hidden"
           >
             Plan Your Journey
             <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-active:translate-x-0.5" />
@@ -123,10 +123,10 @@ export default function Closing() {
           </a>
 
           <div className="mt-2 flex flex-col items-center gap-2">
-            <p className="text-[0.78rem] uppercase tracking-[0.22em] text-gold md:text-[1rem] md:tracking-[0.3em]">
+            <p className="text-[0.86rem] uppercase tracking-[0.2em] text-gold md:text-[1rem] md:tracking-[0.3em]">
               Kerala to the World.
             </p>
-            <p className="max-w-[48ch] text-[0.72rem] uppercase leading-[1.7] tracking-[0.1em] text-[#d9d5cb]/60 md:text-[0.9rem] md:leading-[1.8] md:tracking-[0.14em]">
+            <p className="max-w-[48ch] text-[0.8rem] uppercase leading-[1.75] tracking-[0.1em] text-[#d9d5cb]/60 md:text-[0.9rem] md:leading-[1.8] md:tracking-[0.14em]">
               One travel house. An endless horizon.
               <br />
               Curated with intention. Experienced without compromise.
@@ -136,7 +136,7 @@ export default function Closing() {
           <div className="mt-2 flex w-full max-w-[820px] flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-[#faf9f6]/15 pt-6">
             {SERVICES.map((s, i) => (
               <span key={s} className="flex items-center gap-3">
-                <span className="text-[0.64rem] uppercase tracking-[0.16em] text-[#d9d5cb]/70 md:text-[0.8rem] md:tracking-[0.2em]">
+                <span className="text-[0.72rem] uppercase tracking-[0.16em] text-[#d9d5cb]/70 md:text-[0.8rem] md:tracking-[0.2em]">
                   {s}
                 </span>
                 {i < SERVICES.length - 1 && (
@@ -146,7 +146,7 @@ export default function Closing() {
             ))}
           </div>
 
-          <p className="mt-2 text-[0.78rem] uppercase tracking-[0.16em] text-[#faf9f6] md:text-[1rem] md:tracking-[0.2em]">
+          <p className="mt-2 text-[0.86rem] uppercase tracking-[0.16em] text-[#faf9f6] md:text-[1rem] md:tracking-[0.2em]">
             SIX TRAVEL&trade; &nbsp;&bull;&nbsp; The Six Standard&trade;
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function Closing() {
               <a
                 href={n.href}
                 key={n.label}
-                className="text-[0.58rem] uppercase tracking-[0.12em] text-[#d9d5cb]/70 transition-colors duration-[300ms] ease-smooth hover:text-gold md:text-[0.66rem] md:tracking-[0.16em]"
+                className="text-[0.64rem] uppercase tracking-[0.13em] text-[#d9d5cb]/70 transition-colors duration-[300ms] ease-smooth hover:text-gold md:text-[0.66rem] md:tracking-[0.16em]"
               >
                 {n.label}
               </a>
@@ -172,7 +172,7 @@ export default function Closing() {
           </nav>
         </div>
 
-        <div className="mt-6 flex flex-col items-center gap-2 border-t border-[#faf9f6]/[0.08] pt-5 text-center text-[0.54rem] uppercase tracking-[0.12em] text-[#d9d5cb]/45 md:mt-8 md:flex-row md:justify-between md:gap-4 md:pt-6 md:text-left md:text-[0.62rem] md:tracking-[0.16em]">
+        <div className="mt-6 flex flex-col items-center gap-2 border-t border-[#faf9f6]/[0.08] pt-5 text-center text-[0.6rem] uppercase tracking-[0.12em] text-[#d9d5cb]/45 md:mt-8 md:flex-row md:justify-between md:gap-4 md:pt-6 md:text-left md:text-[0.62rem] md:tracking-[0.16em]">
           <span>© {new Date().getFullYear()} SIX TRAVEL™. The Six Standard™.</span>
           <span>Curated Journeys. A Richer World.</span>
         </div>

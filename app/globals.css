@@ -19,12 +19,12 @@
   }
   @media (max-width: 639px) {
     html {
-      font-size: 87.5%;
+      font-size: 96%;
     }
   }
   @media (max-width: 400px) {
     html {
-      font-size: 82.5%;
+      font-size: 91%;
     }
   }
   img {
@@ -171,17 +171,17 @@ html.lenis body {
     gap: 1.1rem;
   }
   .section-head h2 {
-    font-size: 2.1rem;
+    font-size: 2.35rem;
     line-height: 1.1;
     letter-spacing: 0.005em;
   }
   .section-head .sub {
-    font-size: 0.6rem;
+    font-size: 0.66rem;
     letter-spacing: 0.28em;
   }
 
   .eyebrow {
-    font-size: 0.58rem;
+    font-size: 0.64rem;
     letter-spacing: 0.3em;
   }
 

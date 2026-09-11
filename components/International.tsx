@@ -21,10 +21,10 @@ export default function International() {
         <div className="flex flex-col items-center" data-reveal="">
           <p className="eyebrow">Six Experience™</p>
           <span className="mt-3 block h-px w-12 bg-gold/60" />
-          <h2 className="mt-5 max-w-[26ch] font-display text-[1.5rem] italic leading-[1.2] text-cream md:text-[2.4rem]">
+          <h2 className="mt-5 max-w-[26ch] font-display text-[1.7rem] italic leading-[1.2] text-cream md:text-[2.4rem]">
             We don&rsquo;t simply arrange the journey. We <span className="text-gold not-italic">compose</span> it.
           </h2>
-          <p className="mt-5 max-w-[56ch] text-[0.78rem] leading-[1.7] text-mist md:text-[0.95rem] md:leading-[1.75]">
+          <p className="mt-5 max-w-[56ch] text-[0.86rem] leading-[1.75] text-mist md:text-[0.95rem] md:leading-[1.75]">
             Every SIX journey begins with a simple question:{" "}
             <span className="text-cream-soft">What should this experience feel like?</span>
           </p>
@@ -42,10 +42,10 @@ export default function International() {
                   key={s}
                   className="flex items-center gap-4 border-t border-line py-3.5 last:border-b"
                 >
-                  <span className="font-display text-sm italic text-gold md:text-base">
+                  <span className="font-display text-base italic text-gold">
                     {String(panelIdx * 3 + i + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 text-[0.68rem] uppercase tracking-[0.12em] text-cream-soft md:text-[0.75rem] md:tracking-[0.16em]">
+                  <span className="flex-1 text-[0.74rem] uppercase tracking-[0.14em] text-cream-soft md:text-[0.75rem] md:tracking-[0.16em]">
                     {s}
                   </span>
                 </div>
@@ -54,7 +54,7 @@ export default function International() {
           ))}
         </div>
 
-        <p className="mt-10 max-w-[48ch] text-[0.78rem] uppercase leading-[1.6] tracking-[0.08em] text-gold md:text-[0.95rem] md:leading-[1.7] md:tracking-[0.12em]" data-reveal="">
+        <p className="mt-10 max-w-[48ch] text-[0.84rem] uppercase leading-[1.65] tracking-[0.1em] text-gold md:text-[0.95rem] md:leading-[1.7] md:tracking-[0.12em]" data-reveal="">
           Find the exceptional. Remove the unnecessary. Create the unforgettable.
         </p>
 
@@ -64,10 +64,10 @@ export default function International() {
           data-reveal=""
         >
           <span className="block h-px w-10 bg-gold/70" />
-          <p className="max-w-[30ch] font-display text-[1.3rem] italic leading-[1.25] text-cream md:text-[2.1rem]">
+          <p className="max-w-[30ch] font-display text-[1.5rem] italic leading-[1.25] text-cream md:text-[2.1rem]">
             Travel for people who move differently
           </p>
-          <p className="max-w-[64ch] text-[0.78rem] leading-[1.75] text-mist md:text-[0.98rem] md:leading-[1.8]">
+          <p className="max-w-[64ch] text-[0.86rem] leading-[1.8] text-mist md:text-[0.98rem] md:leading-[1.8]">
             SIX TRAVEL&trade; creates experiences for people who value time,
             quality, discovery, and meaningful connection.
           </p>

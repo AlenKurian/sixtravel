@@ -57,10 +57,10 @@ function ContrastCell({ c, i }: { c: (typeof CONTRASTS)[number]; i: number }) {
             : "bg-forest/55"
         }`}
       />
-      <span className="relative z-[1] mb-1 px-4 text-[0.54rem] uppercase tracking-[0.24em] text-mist-soft md:px-8 md:text-[0.64rem] md:tracking-[0.3em]">
+      <span className="relative z-[1] mb-1 px-4 text-[0.6rem] uppercase tracking-[0.22em] text-mist-soft md:px-8 md:text-[0.64rem] md:tracking-[0.3em]">
         {String(i + 1).padStart(2, "0")} &mdash; {c.small}
       </span>
-      <span className="relative z-[1] px-4 pb-4 font-display text-[1.4rem] italic leading-none text-[#faf9f6] md:px-8 md:pb-8 md:text-[2.6rem] lg:text-[3.1rem]">
+      <span className="relative z-[1] px-4 pb-4 font-display text-[1.6rem] italic leading-none text-[#faf9f6] md:px-8 md:pb-8 md:text-[2.6rem] lg:text-[3.1rem]">
         {c.big}
       </span>
       <span
@@ -77,7 +77,7 @@ function PhilosophyColumn({ c }: { c: (typeof COLUMNS)[number] }) {
         {c.heading}
         <span className="h-px w-10 bg-gold/60" />
       </p>
-      <p className="js-phil-reveal mt-5 max-w-[14ch] font-display text-[1.6rem] not-italic leading-[1.15] text-cream md:text-[2.4rem]">
+      <p className="js-phil-reveal mt-5 max-w-[14ch] font-display text-[1.85rem] not-italic leading-[1.15] text-cream md:text-[2.4rem]">
         <span className="italic">{c.eyebrow.split(" ")[0]}</span>{" "}
         {c.eyebrow.split(" ").slice(1).join(" ")}
       </p>
@@ -85,14 +85,14 @@ function PhilosophyColumn({ c }: { c: (typeof COLUMNS)[number] }) {
       <div className="mt-6 flex flex-col gap-5">
         {c.lead && (
           <p
-            className="js-phil-reveal text-[0.72rem] font-bold uppercase leading-[1.55] text-cream md:text-[0.88rem]"
+            className="js-phil-reveal text-[0.8rem] font-bold uppercase leading-[1.6] text-cream md:text-[0.88rem]"
             dangerouslySetInnerHTML={{ __html: c.lead }}
           />
         )}
         {c.paragraphs.map((p, i) => (
           <p
             key={i}
-            className="js-phil-reveal max-w-[46ch] text-[0.82rem] leading-[1.75] text-mist md:text-[0.92rem] md:leading-[1.8]"
+            className="js-phil-reveal max-w-[46ch] text-[0.9rem] leading-[1.8] text-mist md:text-[0.92rem] md:leading-[1.8]"
             dangerouslySetInnerHTML={{ __html: p }}
           />
         ))}

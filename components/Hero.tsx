@@ -70,13 +70,13 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,9,0.44)_0%,rgba(10,10,9,0.08)_26%,rgba(10,10,9,0.2)_52%,rgba(10,10,9,0.65)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,10,9,0.58))]" />
 
-      <div className="relative z-[3] flex w-full flex-col items-center px-6 pb-[calc(env(safe-area-inset-bottom)+8rem)] pt-[13vh] sm:px-8 md:px-16 md:pb-32 lg:px-24">
-        <p className="mb-6 font-body text-[0.52rem] font-medium uppercase tracking-[0.28em] text-[#faf9f6]/80 md:mb-9 md:text-[0.72rem] md:tracking-[0.32em]">
+      <div className="relative z-[3] flex w-full flex-col items-center px-6 pb-[calc(env(safe-area-inset-bottom)+5rem)] pt-[13vh] sm:px-8 md:px-16 md:pb-32 lg:px-24">
+        <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.28em] text-[#faf9f6]/80 md:mb-9 md:text-[0.72rem] md:tracking-[0.32em]">
           The Six Standard™ · Travel, Perfected.
         </p>
 
         <div className="flex flex-col items-center gap-8">
-          <h1 className="js-headline font-display text-[1.9rem] italic leading-[1.1] tracking-[0.005em] text-[#faf9f6] xs:text-[2.1rem] sm:text-5xl md:text-6xl md:leading-[1.08] md:tracking-normal lg:text-[4.4rem]">
+          <h1 className="js-headline font-display text-[2.2rem] italic leading-[1.08] tracking-[0.005em] text-[#faf9f6] xs:text-[2.4rem] sm:text-5xl md:text-6xl md:leading-[1.08] md:tracking-normal lg:text-[4.4rem]">
             {["The World, Beautifully", "Within Reach"].map((l) => (
               <span key={l} className="js-line block overflow-hidden">
                 <span className="block">{l}</span>
@@ -87,10 +87,10 @@ export default function Hero() {
           <div className="js-copy flex flex-col items-center gap-7">
             <a
               href="#plan"
-              className="group inline-flex items-center gap-3 border border-[#faf9f6]/70 px-6 py-[0.75rem] font-body text-[0.6rem] uppercase tracking-[0.14em] text-[#faf9f6] transition-colors duration-500 ease-smooth hover:bg-[#faf9f6] hover:text-forest md:hidden"
+              className="group inline-flex items-center gap-3 border border-[#faf9f6]/70 px-6 py-[0.75rem] font-body text-[0.66rem] uppercase tracking-[0.14em] text-[#faf9f6] transition-colors duration-500 ease-smooth hover:bg-[#faf9f6] hover:text-forest md:hidden"
             >
               Plan Your Journey
-              <Arrow className="h-[0.8rem] w-[0.8rem] transition-transform duration-500 ease-smooth group-hover:translate-x-0.5" />
+              <Arrow className="h-[0.85rem] w-[0.85rem] transition-transform duration-500 ease-smooth group-hover:translate-x-0.5" />
             </a>
             <a
               href="#plan"
@@ -106,7 +106,7 @@ export default function Hero() {
           {CHIPS.map((c) => (
             <span
               key={c}
-              className="js-chip rounded-none border border-[#faf9f6]/25 px-3 py-[0.45rem] font-body text-[0.52rem] uppercase tracking-[0.18em] text-[#e9e6dd] md:px-4 md:py-[0.55rem] md:text-[0.64rem] md:tracking-[0.22em]"
+              className="js-chip rounded-none border border-[#faf9f6]/25 px-3 py-[0.45rem] font-body text-[0.58rem] uppercase tracking-[0.18em] text-[#e9e6dd] md:px-4 md:py-[0.55rem] md:text-[0.64rem] md:tracking-[0.22em]"
             >
               {c}
             </span>

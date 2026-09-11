@@ -46,10 +46,10 @@ export default function Standard() {
         <div className="flex flex-col items-center gap-5 text-center" data-reveal="">
           <p className="eyebrow">Beyond the Itinerary</p>
           <span className="block h-px w-14 bg-gold/60" />
-          <h2 className="max-w-[20ch] headline-vintage text-[2rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl">
+          <h2 className="max-w-[20ch] headline-vintage text-[2.25rem] leading-[1.1] text-cream sm:text-[2.6rem] md:text-5xl lg:text-6xl">
             The <span className="accent">Six</span> Standard™
           </h2>
-          <p className="max-w-[52ch] text-[0.78rem] leading-[1.7] text-mist md:text-base md:leading-[1.8]">
+          <p className="max-w-[52ch] text-[0.86rem] leading-[1.75] text-mist md:text-base md:leading-[1.8]">
             SIX TRAVEL&trade; is not built around volume. Truly considered travel
             requires time — to understand the traveller, study the destination,
             refine the details, and create something genuinely distinctive. So we
@@ -79,20 +79,20 @@ export default function Standard() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col gap-3 p-7">
-                <h3 className="font-display text-[1.2rem] italic text-cream md:text-[1.4rem]">{p.title}</h3>
+                <h3 className="font-display text-[1.3rem] italic text-cream md:text-[1.4rem]">{p.title}</h3>
                 <span className="block h-px w-8 bg-gold/50" />
-                <p className="text-[0.76rem] leading-[1.7] text-mist md:text-[0.83rem] md:leading-[1.75]">{p.body}</p>
+                <p className="text-[0.82rem] leading-[1.75] text-mist md:text-[0.83rem] md:leading-[1.75]">{p.body}</p>
               </div>
             </article>
           ))}
         </div>
 
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-line pt-8 text-center md:mt-20 md:flex-row md:justify-between md:text-left">
-          <p className="text-[0.56rem] uppercase tracking-[0.22em] text-gold md:text-[0.62rem] md:tracking-[0.28em]">
+          <p className="text-[0.62rem] uppercase tracking-[0.2em] text-gold md:text-[0.62rem] md:tracking-[0.28em]">
             That is the SIX difference.
           </p>
           <span className="hidden h-px flex-1 bg-line md:mx-8 md:block" />
-          <p className="text-[0.56rem] uppercase tracking-[0.2em] text-mist md:text-[0.62rem] md:tracking-[0.24em]">
+          <p className="text-[0.62rem] uppercase tracking-[0.18em] text-mist md:text-[0.62rem] md:tracking-[0.24em]">
             SIX TRAVEL&trade;
           </p>
         </div>
