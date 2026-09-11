@@ -75,8 +75,8 @@ export default function Hero() {
           The Six Standard™ · Travel, Perfected.
         </p>
 
-        <div className="flex flex-col items-center gap-8">
-          <h1 className="js-headline font-display text-[2.2rem] font-semibold italic leading-[1.08] tracking-[0.005em] text-[#faf9f6] xs:text-[2.4rem] sm:text-5xl md:text-6xl md:font-medium md:leading-[1.08] md:tracking-normal lg:text-[4.4rem]">
+        <div className="flex w-full flex-col items-center gap-8">
+          <h1 className="js-headline font-display text-[1.55rem] font-semibold italic leading-[1.15] tracking-[-0.01em] text-[#faf9f6] xs:text-[1.7rem] sm:text-5xl md:text-6xl md:font-medium md:leading-[1.08] md:tracking-normal lg:text-[4.4rem]">
             {["The World, Beautifully", "Within Reach"].map((l) => (
               <span key={l} className="js-line block overflow-hidden">
                 <span className="block">{l}</span>
