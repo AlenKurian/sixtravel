@@ -70,7 +70,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,9,0.44)_0%,rgba(10,10,9,0.08)_26%,rgba(10,10,9,0.2)_52%,rgba(10,10,9,0.65)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,10,9,0.58))]" />
 
-      <div className="relative z-[3] flex w-full flex-col items-center px-6 pb-0 pt-0 sm:px-8 md:px-16 md:pb-32 md:pt-[13vh] lg:px-24">
+      <div className="relative z-[3] -mt-16 flex w-full flex-col items-center px-6 pb-0 pt-0 sm:px-8 md:mt-0 md:px-16 md:pb-32 md:pt-[13vh] lg:px-24">
         <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.28em] text-[#faf9f6]/80 md:mb-9 md:text-[0.72rem] md:tracking-[0.32em]">
           The Six Standard™ · Travel, Perfected.
         </p>
